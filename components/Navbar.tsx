@@ -6,7 +6,6 @@ import Header from "./Header";
 
 const Navbar = () => {
   const pathname = usePathname();
-  console.log(pathname);
   const routes = useMemo(
     () => [
       {
