@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Gideon_Roman, Arimo } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Header from "@/components/Header";
 
 const mainFont = Gideon_Roman({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${mainFont.className} ${mainFont.variable} ${subFont.variable} text-primary-color bg-black mx-10 my-4`}
+        className={`${mainFont.className} ${mainFont.variable} ${subFont.variable} flex flex-col h-screen text-primary-color bg-black px-16 py-4`}
       >
         <Navbar />
         {children}

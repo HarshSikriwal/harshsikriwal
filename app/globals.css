@@ -7,8 +7,8 @@
   --secondary-color: #888888;
 }
 * {
-  margin: 0px 0px;
-  padding: 0px 0px;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 .main-font {
@@ -16,4 +16,18 @@
 }
 .sub-font {
   font-family: var(--font-sub);
+  color: var(--secondary-color);
+}
+
+.name-nav h1 {
+  font-size: 60px;
+  line-height: 1;
+}
+
+.name-main h1 {
+  font-size: 80px;
+}
+
+.name-main p {
+  font-size: 28px;
 }

@@ -2,9 +2,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
+import Header from "./Header";
 
 const Navbar = () => {
   const pathname = usePathname();
+  console.log(pathname);
   const routes = useMemo(
     () => [
       {
@@ -23,16 +25,21 @@ const Navbar = () => {
   );
 
   return (
-    <div className="flex justify-end">
+    <div
+      className={`flex  ${
+        pathname === "/" ? "justify-end" : "justify-between"
+      } `}
+    >
+      <Link href="./">
+        <Header className={pathname === "/" ? "hidden" : ""} />
+      </Link>
       <div className="flex gap-8">
         {routes.map((item) => (
           <Link
             key={item.label}
             href={item.href}
             className={
-              item.active
-                ? "text-primary-color sub-font font-bold"
-                : "text-secondary-color sub-font"
+              item.active ? "text-primary-color font-bold" : "sub-font"
             }
           >
             {item.label}
