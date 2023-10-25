@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Gideon_Roman, Arimo } from "next/font/google";
+import { Gideon_Roman, Arimo, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
@@ -9,9 +9,9 @@ const mainFont = Gideon_Roman({
   weight: "400",
   variable: "--font-main",
 });
-const subFont = Arimo({
+const subFont = Nunito_Sans({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["300", "400", "700"],
   variable: "--font-sub",
 });
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${mainFont.className} ${mainFont.variable} ${subFont.variable} flex flex-col h-screen text-primary-color bg-black px-16 py-4`}
+        className={`${mainFont.className} ${mainFont.variable} ${subFont.variable} flex flex-col h-screen text-primary-color bg-black px-32 py-4`}
       >
         <Navbar />
         {children}

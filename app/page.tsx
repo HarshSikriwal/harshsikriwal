@@ -5,21 +5,26 @@ import MyPhoto from "../public/myphoto.png";
 
 export default function Home() {
   return (
-    <div className="h-full relative">
-      <div className="h-full flex flex-col justify-center gap-56">
+    <div className="min-h-[75vh] flex justify-between items-center">
+      <div className="flex flex-col gap-8">
         <Header className="name-main" />
-        <p className="w-2/5 text-3xl">
-          I'm a passionate web developer and recent graduate who thrives on the
+        <div>
+          <p className="w-2/3 text-2xl sub-font mb-10">
+            {`I'm a passionate web developer and recent graduate who thrives on the
           fields of football and Hindi poetry. I live by the motto: 'Life is an
           adventure waiting to be explored.' Also trying to be a bookworm cause
-          it sounds geeky.
-        </p>
+          it sounds geeky.`}
+          </p>
+          <button className="rounded-xl border px-8 py-3 sub-font hover:text-white active:scale-90">
+            Get in Touch
+          </button>
+        </div>
       </div>
       <Image
-        className="absolute right-64 top-20 rounded-full"
+        className="rounded-full"
         src={MyPhoto}
         alt="profile image"
-        height={320}
+        width={320}
       />
     </div>
   );
