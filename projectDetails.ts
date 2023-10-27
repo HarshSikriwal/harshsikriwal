@@ -1,4 +1,4 @@
-const projectDetails = [
+export const projectDetails = [
   {
     name: "Spotify Clone",
     type: "Full-Stack",

@@ -38,7 +38,9 @@ const Navbar = () => {
             key={item.label}
             href={item.href}
             className={
-              item.active ? "text-primary-color font-bold" : "sub-font"
+              item.active
+                ? "text-primary-color font-normal"
+                : "text-secondary-color font-light"
             }
           >
             {item.label}

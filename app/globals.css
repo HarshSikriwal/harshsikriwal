@@ -11,14 +11,6 @@
   padding: 0px;
   box-sizing: border-box;
 }
-.main-font {
-  font-family: var(--font-main);
-}
-.sub-font {
-  font-family: var(--font-sub);
-  color: var(--secondary-color);
-  font-weight: 300;
-}
 
 .name-nav h1 {
   font-size: 60px;
