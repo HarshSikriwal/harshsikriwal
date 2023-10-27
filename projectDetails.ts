@@ -7,13 +7,13 @@ export const projectDetails = [
     description:
       "A fully functioning Spotify Clone with subscriptions, liked songs, and many more.",
     image: [
-      "public/projects-images/spotify-clone-images/without-login.png",
-      "public/projects-images/spotify-clone-images/login-modal.png",
-      "public/projects-images/spotify-clone-images/login-with-songplayer.png",
-      "public/projects-images/spotify-clone-images/mobile-view.png",
-      "public/projects-images/spotify-clone-images/subscribe.png",
+      "/projects-images/spotify-clone-images/without-login.png",
+      "/projects-images/spotify-clone-images/login-modal.png",
+      "/projects-images/spotify-clone-images/login-with-songplayer.png",
+      "/projects-images/spotify-clone-images/mobile-view.png",
+      "/projects-images/spotify-clone-images/subscribe.png",
     ],
-    websiteLink: "https://spotify-clone-one-fawn.vercel.app/",
+    websiteLink: "https://spotify-clone-one-fawn.vercel.",
     gitHubLink: "https://github.com/HarshSikriwal/spotify-clone",
   },
   {
@@ -24,10 +24,10 @@ export const projectDetails = [
     description:
       "A minimalist platform for real-time communication, allowing users to write, like, and interact with each other.",
     image: [
-      "public/projects-images/neeli-chidya-images/neelicheediya-page-with-login.png",
-      "public/projects-images/neeli-chidya-images/neelicheediya-page-without-login.png",
+      "/projects-images/neeli-chidya-images/neelicheediya-page-with-login.png",
+      "/projects-images/neeli-chidya-images/neelicheediya-page-without-login.png",
     ],
-    websiteLink: "https://neeli-chidiya.vercel.app/",
+    websiteLink: "https://neeli-chidiya.vercel.",
     gitHubLink: "https://github.com/HarshSikriwal/NeeliChidiya",
   },
   {
@@ -38,11 +38,11 @@ export const projectDetails = [
     description:
       "A web app that enables users to easily search for any GitHub profile and displays comprehensive GitHub details in a user-friendly interface, utilizing the GitHub API.",
     image: [
-      "public/projects-images/github-finder-images/home-page.png",
-      "public/projects-images/github-finder-images/search-user.png",
-      "public/projects-images/github-finder-images/user-details.png",
+      "/projects-images/github-finder-images/home-page.png",
+      "/projects-images/github-finder-images/search-user.png",
+      "/projects-images/github-finder-images/user-details.png",
     ],
-    websiteLink: "https://github-finder-git-main-harshsikriwal.vercel.app/",
+    websiteLink: "https://github-finder-git-main-harshsikriwal.vercel.",
     gitHubLink: "https://github.com/HarshSikriwal/GithubFinder",
   },
   {
@@ -53,9 +53,9 @@ export const projectDetails = [
     description:
       "A chrome extension to save and annotate important links for later purpose.",
     image: [
-      "public/projects-images/link-copier-images/preview.png",
-      "public/projects-images/link-copier-images/with-tab.png",
-      "public/projects-images/link-copier-images/deletall-confirmation.png",
+      "/projects-images/link-copier-images/preview.png",
+      "/projects-images/link-copier-images/with-tab.png",
+      "/projects-images/link-copier-images/deletall-confirmation.png",
     ],
     gitHubLink: "https://github.com/HarshSikriwal/LINK-COPIER",
   },
@@ -67,10 +67,10 @@ export const projectDetails = [
     description:
       "A landing page for BlockFlow having seamlessly transitions between light and dark themes for a dynamic user experience.",
     image: [
-      "public/projects-images/blockflow-images/light-theme.png",
-      "public/projects-images/blockflow-images/dark-theme.png",
+      "/projects-images/blockflow-images/light-theme.png",
+      "/projects-images/blockflow-images/dark-theme.png",
     ],
-    websiteLink: "https://blockflow-assignment.vercel.app/",
+    websiteLink: "https://blockflow-assignment.vercel.",
     gitHubLink: "https://github.com/HarshSikriwal/blockflow-assignment",
   },
   {
@@ -81,13 +81,13 @@ export const projectDetails = [
     description:
       "Premium Page for grammarly created as a assignmentfeaturing sleek design and captivating animations for a engaging user experience",
     image: [
-      "public/projects-images/grammarly-premium-page/one.png",
-      "public/projects-images/grammarly-premium-page/two.png",
-      "public/projects-images/grammarly-premium-page/three.png",
-      "public/projects-images/grammarly-premium-page/four.png",
-      "public/projects-images/grammarly-premium-page/more-details.png",
+      "/projects-images/grammarly-premium-page/one.png",
+      "/projects-images/grammarly-premium-page/two.png",
+      "/projects-images/grammarly-premium-page/three.png",
+      "/projects-images/grammarly-premium-page/four.png",
+      "/projects-images/grammarly-premium-page/more-details.png",
     ],
-    websiteLink: "https://grammarly-premium-page.vercel.app/",
+    websiteLink: "https://grammarly-premium-page.vercel.",
     gitHubLink: "https://github.com/HarshSikriwal/Grammarly-Premium-Page",
   },
   {
@@ -98,11 +98,11 @@ export const projectDetails = [
     description:
       "Recreated a Pepsi product design from Behance into a full functioning web page.",
     image: [
-      "public/projects-images/pepsi-ui/page-one.png",
-      "public/projects-images/pepsi-ui/page-two.png",
-      "public/projects-images/pepsi-ui/page-three.png",
+      "/projects-images/pepsi-ui/page-one.png",
+      "/projects-images/pepsi-ui/page-two.png",
+      "/projects-images/pepsi-ui/page-three.png",
     ],
-    websiteLink: "https://pepsi-ui-rosy.vercel.app/",
+    websiteLink: "https://pepsi-ui-rosy.vercel.",
     gitHubLink: "https://github.com/HarshSikriwal/PepsiUi",
   },
   {
@@ -113,9 +113,9 @@ export const projectDetails = [
     description:
       "Introducing 'Apna Ghar', a web application where users can effortlessly list properties for rent or sale and engage in conversations with potential buyers",
     image: [
-      "public/projects-images/apna-ghar-images/explore.png",
-      "public/projects-images/apna-ghar-images/account.png",
-      "public/projects-images/apna-ghar-images/offers.png",
+      "/projects-images/apna-ghar-images/explore.png",
+      "/projects-images/apna-ghar-images/account.png",
+      "/projects-images/apna-ghar-images/offers.png",
     ],
     gitHubLink: "https://github.com/HarshSikriwal/Apna-Ghar",
   },
@@ -126,7 +126,7 @@ export const projectDetails = [
     tech: "NextJs, ReactJs, TypeScript, Tailwind, shadcn/ui, PostgreSQL, Supabase",
     description:
       "Buzzout, a lighthearted website, offers a collection of random games to entertain and bring laughter to users.",
-    image: ["public/projects-images/buzzout-images/home.png"],
+    image: ["/projects-images/buzzout-images/home.png"],
     gitHubLink: "https://github.com/HarshSikriwal/Buzz-Out",
   },
 ];
