@@ -3,6 +3,8 @@ import { Titillium_Web } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
+import DetailsProvider from "@/context/ProjectContext";
+import ProjectsProvider from "@/context/ProjectContext";
 
 const mainFont = Titillium_Web({
   subsets: ["latin"],
@@ -26,7 +28,7 @@ export default function RootLayout({
         className={`${mainFont.className} ${mainFont.variable} flex flex-col h-screen text-primary-color bg-black px-32 py-4`}
       >
         <Navbar />
-        {children}
+        <ProjectsProvider>{children}</ProjectsProvider>
       </body>
     </html>
   );
