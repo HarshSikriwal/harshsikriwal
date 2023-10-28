@@ -13,7 +13,7 @@ export const ProjectContext = createContext<{
 });
 
 const ProjectsProvider = ({ children }: { children: React.ReactNode }) => {
-  const [myProject, setMyProject] = useState(projectDetails[0]);
+  const [myProject, setMyProject] = useState(projectDetails[2]);
   return (
     <ProjectContext.Provider value={{ myProject, setMyProject }}>
       {children}

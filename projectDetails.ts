@@ -1,5 +1,29 @@
 export const projectDetails = [
   {
+    name: "Apna Ghar",
+    type: "Full-Stack",
+    duration: "June23-Ongoing",
+    tech: "React, Vite, Tailwind, DaisyUI, React-Router, Authentication, Firebase",
+    description:
+      "Introducing 'Apna Ghar', a web application where users can effortlessly list properties for rent or sale and engage in conversations with potential buyers",
+    image: [
+      "/projects-images/apna-ghar-images/explore.png",
+      "/projects-images/apna-ghar-images/account.png",
+      "/projects-images/apna-ghar-images/offers.png",
+    ],
+    gitHubLink: "https://github.com/HarshSikriwal/Apna-Ghar",
+  },
+  {
+    name: "BuzzOut",
+    type: "Full-Stack",
+    duration: "Aug23-Ongoing",
+    tech: "NextJs, ReactJs, TypeScript, Tailwind, shadcn/ui, PostgreSQL, Supabase",
+    description:
+      "Buzzout, a lighthearted website, offers a collection of random games to entertain and bring laughter to users.",
+    image: ["/projects-images/buzzout-images/home.png"],
+    gitHubLink: "https://github.com/HarshSikriwal/Buzz-Out",
+  },
+  {
     name: "Spotify Clone",
     type: "Full-Stack",
     duration: "July23-Oct23",
@@ -104,29 +128,5 @@ export const projectDetails = [
     ],
     websiteLink: "https://pepsi-ui-rosy.vercel.",
     gitHubLink: "https://github.com/HarshSikriwal/PepsiUi",
-  },
-  {
-    name: "Apna Ghar",
-    type: "Full-Stack",
-    duration: "June23-Ongoing",
-    tech: "React, Vite, Tailwind, DaisyUI, React-Router, Authentication, Firebase",
-    description:
-      "Introducing 'Apna Ghar', a web application where users can effortlessly list properties for rent or sale and engage in conversations with potential buyers",
-    image: [
-      "/projects-images/apna-ghar-images/explore.png",
-      "/projects-images/apna-ghar-images/account.png",
-      "/projects-images/apna-ghar-images/offers.png",
-    ],
-    gitHubLink: "https://github.com/HarshSikriwal/Apna-Ghar",
-  },
-  {
-    name: "BuzzOut",
-    type: "Full-Stack",
-    duration: "Aug23-Ongoing",
-    tech: "NextJs, ReactJs, TypeScript, Tailwind, shadcn/ui, PostgreSQL, Supabase",
-    description:
-      "Buzzout, a lighthearted website, offers a collection of random games to entertain and bring laughter to users.",
-    image: ["/projects-images/buzzout-images/home.png"],
-    gitHubLink: "https://github.com/HarshSikriwal/Buzz-Out",
   },
 ];
