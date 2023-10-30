@@ -12,19 +12,26 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useRef, useState } from "react";
 import SingleProject from "./SingleProject";
 
+const variants = ["first", "before", "spotlight", "after", "last"] as const;
+
 const ProjectNames = () => {
-  const [trio, setTrio] = useState([0, 1, 2, 3, 4]);
+  const [trio, setTrio] = useState(projectDetails.map((_, i) => i));
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [animationStarted, setAnimationStarted] = useState(false);
+  const [animationType, setAnimationType] = useState<"up" | "down" | null>(
+    null
+  );
 
   const onDown = () => {
-    setTrio((p) => p.map((i) => checkIndex(i - 1)));
-    if (!animationStarted) {
-      setAnimationStarted(true);
+    if (!animationType) {
+      setAnimationType("down");
     }
+    setTrio((p) => p.map((i) => checkIndex(i - 1)));
   };
   const onUp = () => {
+    if (!animationType) {
+      setAnimationType("up");
+    }
     setTrio((p) => p.map((i) => checkIndex(i + 1)));
   };
 
@@ -33,19 +40,34 @@ const ProjectNames = () => {
       <div
         id="list-container"
         ref={containerRef}
-        className=" h-full flex flex-col items-end justify-between w-full overflow-hidden"
+        className="h-full gap-6 flex flex-col items-end justify-between w-full overflow-hidden"
       >
-        {/* <ChevronUp onClick={onUp} /> */}
-        <SingleProject
+        <ChevronUp onClick={onUp} />
+        {trio.map((i, index) => (
+          <SingleProject
+            projectIndex={i}
+            variant={(() => {
+              if (index < 5) return variants[index];
+              if (index === 5) return "bottom";
+              if (index === trio.length - 1) return "top";
+              return "top";
+            })()}
+            key={i}
+          />
+        ))}
+        {/* <SingleProject
           projectIndex={trio[0]}
           variant="first"
-          animationStarted={animationStarted}
+          animationType={animationType}
         />
         <SingleProject projectIndex={trio[1]} variant="before" />
         <SingleProject projectIndex={trio[2]} variant="spotlight" />
         <SingleProject projectIndex={trio[3]} variant="after" />
-        <SingleProject projectIndex={trio[4]} variant="last" />
-
+        <SingleProject
+          projectIndex={trio[4]}
+          variant="last"
+          animationType={animationType}
+        /> */}
         <ChevronDown onClick={onDown} />
       </div>
     </>

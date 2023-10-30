@@ -22,11 +22,18 @@ const variantToScale = {
 function SingleProject({
   projectIndex,
   variant,
-  animationStarted,
+  animationType,
 }: {
   projectIndex: number;
-  variant: "first" | "before" | "after" | "last" | "spotlight";
-  animationStarted?: boolean;
+  variant:
+    | "first"
+    | "before"
+    | "after"
+    | "last"
+    | "spotlight"
+    | "top"
+    | "bottom";
+  animationType?: "up" | "down" | null;
 }) {
   const { setMyProject } = useContext(ProjectContext);
   const [project, setProject] = useState(projectDetails.at(projectIndex)!);
@@ -55,25 +62,48 @@ function SingleProject({
         //   y: 100,
         //   // opacity: 0
         // }}
-        initial={{
-          y: variant === "first" && animationStarted ? -100 : 0,
+        // initial={{
+        //   y:
+        //     variant === "first"
+        //       ? animationType === "down"
+        //         ? -100
+        //         : animationType === "up"
+        //         ? 100
+        //         : 0
+        //       : variant === "last" && animationType === "up"
+        //       ? 100
+        //       : 0,
 
-          translateX: variant === "first" && animationStarted ? "10px" : 0,
-        }}
-        animate={{ y: 0, translateX: variant === "first" ? "0px" : 0 }}
-        exit={{
-          y: variant === "last" ? 100 : 0,
-          opacity: variant === "last" ? 0 : 1,
-        }}
+        //   translateX: variant === "first" && animationType ? "10px" : 0,
+        // }}
+        // animate={{ y: 0, translateX: variant === "first" ? "0px" : 0 }}
+        // exit={{
+        //   y:
+        //     variant === "last"
+        //       ? 100
+        //       : variant === "first" && animationType === "up"
+        //       ? -100
+        //       : 0,
+        //   opacity: variant === "last" ? 0 : 1,
+        // }}
         transition={{
           duration: 0.7,
           opacity: { duration: 0 },
           fontSize: { duration: 0 },
+
           type: "spring",
           ease: "backOut",
         }}
         key={project.name}
         layoutId={project.name}
+        className={clsx(
+          (variant === "top" || variant === "bottom") && "absolute",
+          variant === "top"
+            ? "top-0 invisible"
+            : variant === "bottom"
+            ? "bottom-0 invisible"
+            : ""
+        )}
       >
         <div
           className={clsx(
@@ -87,9 +117,9 @@ function SingleProject({
               "text-primary-color": variant === "spotlight",
             },
             {
-              "italic text-xl [&>p:nth-child(2)]:text-xs ":
+              " text-xl [&>p:nth-child(2)]:text-xs ":
                 variant === "first" || variant === "last",
-              "italic text-2xl [&>p:nth-child(2)]:text-md":
+              " text-2xl [&>p:nth-child(2)]:text-md":
                 variant === "before" || variant === "after",
               " text-4xl leading-[50px] [&>p:nth-child(2)]:text-lg [&>p:nth-child(2)]:text-stone-400":
                 variant === "spotlight",
