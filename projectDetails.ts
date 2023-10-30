@@ -84,8 +84,8 @@ export const projectDetails = [
     gitHubLink: "https://github.com/HarshSikriwal/LINK-COPIER",
   },
   {
-    name: "Company Landing Page: BlockFlow",
-    type: "Front-End",
+    name: "BlockFlow Page",
+    type: "Front-End/Landing Page",
     duration: "Aug23",
     tech: "ReactJs, TypeScript, Tailwind, Framer-Motion",
     description:
@@ -98,8 +98,8 @@ export const projectDetails = [
     gitHubLink: "https://github.com/HarshSikriwal/blockflow-assignment",
   },
   {
-    name: "Premium Page: Grammarly",
-    type: "Front-End",
+    name: "Grammarly Page",
+    type: "Front-End/Premium Page",
     duration: "Nov22",
     tech: "React, NextJs, Tailwind, TypeScript,...",
     description:
@@ -115,8 +115,8 @@ export const projectDetails = [
     gitHubLink: "https://github.com/HarshSikriwal/Grammarly-Premium-Page",
   },
   {
-    name: "Product Page: Pepsi",
-    type: "Front-End",
+    name: "Pepsi Page ",
+    type: "Front-End/Product Page",
     duration: "Nov22",
     tech: "React, Vite, Bootstrap, TypeScript",
     description:

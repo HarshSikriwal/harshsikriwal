@@ -7,11 +7,11 @@ import ProjectNames from "@/components/ProjectNames";
 
 const Projects = () => {
   return (
-    <div className="flex justify-between mt-8">
+    <div className="flex justify-between py-8 grow">
       <div className="basis-2/3">
         <ProjectDetails />
       </div>
-      <div className="h-[500px] relative grow">
+      <div className="h-full relative grow">
         <ProjectNames />
       </div>
     </div>
