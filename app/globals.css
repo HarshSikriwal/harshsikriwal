@@ -26,7 +26,6 @@
   font-size: 24px;
 }
 
-/* #list-container {
-  perspective: 1000px; /* Set the perspective to create the 3D effect */
-/* transform: rotateX(5deg) scale(1); */
-/* } */
+.project-grayscale:hover {
+  filter: blur(4px) grayscale(20);
+}

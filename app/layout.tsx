@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${mainFont.className} ${mainFont.variable} flex flex-col h-screen text-primary-color overflow-y-hidden bg-black px-32 py-4`}
+        className={`${mainFont.className} ${mainFont.variable} flex flex-col h-screen text-primary-color overflow-y-hidden bg-[#020207] px-32 py-4`}
       >
         <Navbar />
         <ProjectsProvider>{children}</ProjectsProvider>

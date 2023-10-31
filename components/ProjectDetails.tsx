@@ -1,26 +1,19 @@
 import { ProjectContext } from "@/context/ProjectContext";
 import Image from "next/image";
 import { useContext } from "react";
+import ProjectImages from "./ProjectImages";
 
 const ProjectDetails = () => {
   const { myProject } = useContext(ProjectContext);
   return (
-    <div className="flex flex-col h-full w-full">
-      <div className="relative grow">
-        <Image
-          className="object-cover "
-          src={myProject.image[0]}
-          alt="Project Images"
-          fill
-          style={{ objectFit: "contain" }}
-        />
-      </div>
-      <p className="w-[500px] text-secondary-color text-lg">
-        {myProject.description}
-      </p>
-      <div className="w-[500px] border-2 px-4 border-secondary-color text-secondary-color truncate">
-        {myProject.tech}
-      </div>
+    <div className=" flex flex-col h-full w-full border-1 relative">
+      <ProjectImages images={myProject.image} />
+      {/* <div className="">
+        <p className="w-[500px] text-white text-2xl">{myProject.description}</p>
+        <div className="w-[500px] border-2 px-4 border-secondary-color text-secondary-color truncate">
+          {myProject.tech}
+        </div>
+      </div> */}
     </div>
   );
 };

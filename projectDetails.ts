@@ -37,7 +37,7 @@ export const projectDetails = [
       "/projects-images/spotify-clone-images/mobile-view.png",
       "/projects-images/spotify-clone-images/subscribe.png",
     ],
-    websiteLink: "https://spotify-clone-one-fawn.vercel.",
+    websiteLink: "https://spotify-clone-one-fawn.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/spotify-clone",
   },
   {
@@ -51,7 +51,7 @@ export const projectDetails = [
       "/projects-images/neeli-chidya-images/neelicheediya-page-with-login.png",
       "/projects-images/neeli-chidya-images/neelicheediya-page-without-login.png",
     ],
-    websiteLink: "https://neeli-chidiya.vercel.",
+    websiteLink: "https://neeli-chidiya.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/NeeliChidiya",
   },
   {
@@ -66,7 +66,7 @@ export const projectDetails = [
       "/projects-images/github-finder-images/search-user.png",
       "/projects-images/github-finder-images/user-details.png",
     ],
-    websiteLink: "https://github-finder-git-main-harshsikriwal.vercel.",
+    websiteLink: "https://github-finder-git-main-harshsikriwal.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/GithubFinder",
   },
   {
@@ -94,7 +94,7 @@ export const projectDetails = [
       "/projects-images/blockflow-images/light-theme.png",
       "/projects-images/blockflow-images/dark-theme.png",
     ],
-    websiteLink: "https://blockflow-assignment.vercel.",
+    websiteLink: "https://blockflow-assignment.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/blockflow-assignment",
   },
   {
@@ -111,7 +111,7 @@ export const projectDetails = [
       "/projects-images/grammarly-premium-page/four.png",
       "/projects-images/grammarly-premium-page/more-details.png",
     ],
-    websiteLink: "https://grammarly-premium-page.vercel.",
+    websiteLink: "https://grammarly-premium-page.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/Grammarly-Premium-Page",
   },
   {
@@ -126,7 +126,7 @@ export const projectDetails = [
       "/projects-images/pepsi-ui/page-two.png",
       "/projects-images/pepsi-ui/page-three.png",
     ],
-    websiteLink: "https://pepsi-ui-rosy.vercel.",
+    websiteLink: "https://pepsi-ui-rosy.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/PepsiUi",
   },
 ];
