@@ -1,17 +1,36 @@
+import { ProjectContext } from "@/context/ProjectContext";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import { useState, useEffect, useContext } from "react";
 
-const ProjectImages = ({ images }: { images: string[] }) => {
+const ProjectImages = () => {
+  const { myProject } = useContext(ProjectContext);
+  const { images } = myProject;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(
+      () =>
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length),
+      3000
+    ); // Change image every 2 seconds
+
+    return () => {
+      clearInterval(interval); // Clean up the interval when the component unmounts
+    };
+  }, [images]);
+
   return (
-    <div className="relative grow">
+    <motion.div className="relative grow">
       <Image
-        className="project-grayscale"
-        src={images[0]}
-        alt="Project Images"
+        className="project-grayscale object-fit-contain "
+        src={images[currentImageIndex]}
+        alt={`Project Image`}
         fill
+        loading="eager"
         style={{ objectFit: "contain" }}
       />
-    </div>
+    </motion.div>
   );
 };
 

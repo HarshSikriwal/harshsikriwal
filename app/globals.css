@@ -27,5 +27,5 @@
 }
 
 .project-grayscale:hover {
-  filter: blur(4px) grayscale(20);
+  filter: blur(20px) grayscale(20);
 }

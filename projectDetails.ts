@@ -6,7 +6,7 @@ export const projectDetails = [
     tech: "React, Vite, Tailwind, DaisyUI, React-Router, Authentication, Firebase",
     description:
       "Introducing 'Apna Ghar', a web application where users can effortlessly list properties for rent or sale and engage in conversations with potential buyers",
-    image: [
+    images: [
       "/projects-images/apna-ghar-images/explore.png",
       "/projects-images/apna-ghar-images/account.png",
       "/projects-images/apna-ghar-images/offers.png",
@@ -20,7 +20,7 @@ export const projectDetails = [
     tech: "NextJs, ReactJs, TypeScript, Tailwind, shadcn/ui, PostgreSQL, Supabase",
     description:
       "Buzzout, a lighthearted website, offers a collection of random games to entertain and bring laughter to users.",
-    image: ["/projects-images/buzzout-images/home.png"],
+    images: ["/projects-images/buzzout-images/home.png"],
     gitHubLink: "https://github.com/HarshSikriwal/Buzz-Out",
   },
   {
@@ -30,7 +30,7 @@ export const projectDetails = [
     tech: "NextJs, ReactJs, TypeScript, Tailwind, PostgreSQL, Supabase, Stripe, ShadCN/UI,...",
     description:
       "A fully functioning Spotify Clone with subscriptions, liked songs, and many more.",
-    image: [
+    images: [
       "/projects-images/spotify-clone-images/without-login.png",
       "/projects-images/spotify-clone-images/login-modal.png",
       "/projects-images/spotify-clone-images/login-with-songplayer.png",
@@ -47,7 +47,7 @@ export const projectDetails = [
     tech: "NextJs, ReactJs, TypeScript, Tailwind, PostgreSQL, Supabase",
     description:
       "A minimalist platform for real-time communication, allowing users to write, like, and interact with each other.",
-    image: [
+    images: [
       "/projects-images/neeli-chidya-images/neelicheediya-page-with-login.png",
       "/projects-images/neeli-chidya-images/neelicheediya-page-without-login.png",
     ],
@@ -61,7 +61,7 @@ export const projectDetails = [
     tech: "ReactJs, JavaScript, Tailwind, DaisyUI, GitHubAPI, REST",
     description:
       "A web app that enables users to easily search for any GitHub profile and displays comprehensive GitHub details in a user-friendly interface, utilizing the GitHub API.",
-    image: [
+    images: [
       "/projects-images/github-finder-images/home-page.png",
       "/projects-images/github-finder-images/search-user.png",
       "/projects-images/github-finder-images/user-details.png",
@@ -76,10 +76,10 @@ export const projectDetails = [
     tech: "JavaScript, Tailwind, HTML, CSS",
     description:
       "A chrome extension to save and annotate important links for later purpose.",
-    image: [
+    images: [
       "/projects-images/link-copier-images/preview.png",
       "/projects-images/link-copier-images/with-tab.png",
-      "/projects-images/link-copier-images/deletall-confirmation.png",
+      "/projects-images/link-copier-images/deleteall-confirmation.png",
     ],
     gitHubLink: "https://github.com/HarshSikriwal/LINK-COPIER",
   },
@@ -90,7 +90,7 @@ export const projectDetails = [
     tech: "ReactJs, TypeScript, Tailwind, Framer-Motion",
     description:
       "A landing page for BlockFlow having seamlessly transitions between light and dark themes for a dynamic user experience.",
-    image: [
+    images: [
       "/projects-images/blockflow-images/light-theme.png",
       "/projects-images/blockflow-images/dark-theme.png",
     ],
@@ -104,7 +104,7 @@ export const projectDetails = [
     tech: "React, NextJs, Tailwind, TypeScript,...",
     description:
       "Premium Page for grammarly created as a assignmentfeaturing sleek design and captivating animations for a engaging user experience",
-    image: [
+    images: [
       "/projects-images/grammarly-premium-page/one.png",
       "/projects-images/grammarly-premium-page/two.png",
       "/projects-images/grammarly-premium-page/three.png",
@@ -121,7 +121,7 @@ export const projectDetails = [
     tech: "React, Vite, Bootstrap, TypeScript",
     description:
       "Recreated a Pepsi product design from Behance into a full functioning web page.",
-    image: [
+    images: [
       "/projects-images/pepsi-ui/page-one.png",
       "/projects-images/pepsi-ui/page-two.png",
       "/projects-images/pepsi-ui/page-three.png",
