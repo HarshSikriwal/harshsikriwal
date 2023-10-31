@@ -41,9 +41,10 @@ function SingleProject({
   useEffect(() => {
     setProject(projectDetails.at(projectIndex)!);
     if (variant === "spotlight") {
-      // setMyProject(projectDetails[projectIndex]);
+      console.log(variant);
+      setMyProject(projectDetails[projectIndex]);
     }
-  }, [projectIndex]);
+  }, [projectIndex, variant]);
 
   return (
     <AnimatePresence mode="popLayout">

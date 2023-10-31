@@ -15,7 +15,7 @@ export default function Home() {
           adventure waiting to be explored.' Also trying to be a bookworm cause
           it sounds geeky.`}
           </p>
-          <button className="rounded-xl border bg-stone-900 px-8 py-3 text-secondary-color hover:text-white active:scale-90">
+          <button className="rounded-xl border border-secondary-color px-8 py-3 text-secondary-color hover:text-white hover:border-primary-color active:scale-90">
             Get in Touch
           </button>
         </div>

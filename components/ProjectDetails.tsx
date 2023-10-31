@@ -5,14 +5,16 @@ import { useContext } from "react";
 const ProjectDetails = () => {
   const { myProject } = useContext(ProjectContext);
   return (
-    <div className="flex flex-col justify-end h-full">
-      <Image
-        className="object-cover"
-        src={myProject.image[0]}
-        alt="Project Images"
-        width={500}
-        height={300}
-      />
+    <div className="flex flex-col h-full w-full">
+      <div className="relative grow">
+        <Image
+          className="object-cover "
+          src={myProject.image[0]}
+          alt="Project Images"
+          fill
+          style={{ objectFit: "contain" }}
+        />
+      </div>
       <p className="w-[500px] text-secondary-color text-lg">
         {myProject.description}
       </p>
