@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 import { projectDetails } from "@/projectDetails";
-import ProjectDetails from "@/components/ProjectDetails";
+import ProjectDetails from "@/components/ProjectAbout";
 import ProjectNames from "@/components/ProjectNames";
 
 const Projects = () => {

@@ -1,36 +1,58 @@
 import { ProjectContext } from "@/context/ProjectContext";
+import { projectDetails } from "@/projectDetails";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect, useContext } from "react";
 
-const ProjectImages = () => {
+const ProjectImages = ({
+  project,
+}: {
+  project: (typeof projectDetails)[0];
+}) => {
   const { myProject } = useContext(ProjectContext);
-  const { images } = myProject;
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [prevInterval, setPrevInterval] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const interval = setInterval(
-      () =>
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length),
-      3000
-    ); // Change image every 2 seconds
+    console.log(myProject?.name, project.name);
 
+    if (myProject?.name !== project.name && prevInterval) {
+      clearInterval(prevInterval);
+      setPrevInterval(null);
+      return;
+    }
+    if (myProject?.name !== project.name) return;
+    setPrevInterval(
+      setInterval(() => {
+        setCurrentIndex((prev) => {
+          console.log(prev);
+          return (prev + 1) % project.images.length;
+        });
+      }, 2000)
+    );
     return () => {
-      clearInterval(interval); // Clean up the interval when the component unmounts
+      if (prevInterval) {
+        clearInterval(prevInterval);
+      }
     };
-  }, [images]);
+  }, [myProject?.name]);
 
   return (
-    <motion.div className="relative grow">
-      <Image
-        className="project-grayscale object-fit-contain "
-        src={images[currentImageIndex]}
-        alt={`Project Image`}
-        fill
-        loading="eager"
-        style={{ objectFit: "contain" }}
-      />
-    </motion.div>
+    <div
+      className={project.name === myProject?.name ? "" : "invisible"}
+      key={project.name}
+    >
+      {project.images.map((image, index) => (
+        <div key={index} className={index === currentIndex ? "" : "hidden"}>
+          <Image
+            src={image}
+            alt="image"
+            fill
+            style={{ objectFit: "contain" }}
+          />
+        </div>
+      ))}
+    </div>
   );
 };
 

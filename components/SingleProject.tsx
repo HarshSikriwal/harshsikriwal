@@ -35,13 +35,13 @@ function SingleProject({
     | "bottom";
   animationType?: "up" | "down" | null;
 }) {
-  const { setMyProject } = useContext(ProjectContext);
+  const { myProject, setMyProject } = useContext(ProjectContext);
   const [project, setProject] = useState(projectDetails.at(projectIndex)!);
 
   useEffect(() => {
     setProject(projectDetails.at(projectIndex)!);
     if (variant === "spotlight") {
-      console.log(variant);
+      if (myProject?.name === projectDetails[projectIndex].name) return;
       setMyProject(projectDetails[projectIndex]);
     }
   }, [projectIndex, variant]);

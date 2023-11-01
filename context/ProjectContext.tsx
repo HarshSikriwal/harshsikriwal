@@ -3,9 +3,9 @@ import { projectDetails } from "@/projectDetails";
 import { createContext, useState } from "react";
 
 export const ProjectContext = createContext<{
-  myProject: (typeof projectDetails)[0];
+  myProject: (typeof projectDetails)[0] | null;
   setMyProject: React.Dispatch<
-    React.SetStateAction<(typeof projectDetails)[0]>
+    React.SetStateAction<(typeof projectDetails)[0] | null>
   >;
 }>({
   myProject: projectDetails[0],
@@ -13,7 +13,9 @@ export const ProjectContext = createContext<{
 });
 
 const ProjectsProvider = ({ children }: { children: React.ReactNode }) => {
-  const [myProject, setMyProject] = useState(projectDetails[2]);
+  const [myProject, setMyProject] = useState<(typeof projectDetails)[0] | null>(
+    null
+  );
   return (
     <ProjectContext.Provider value={{ myProject, setMyProject }}>
       {children}
