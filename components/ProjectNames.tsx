@@ -1,5 +1,6 @@
 import { ProjectContext } from "@/context/ProjectContext";
 import { projectDetails } from "@/projectDetails";
+
 import clsx from "clsx";
 import {
   AnimatePresence,
