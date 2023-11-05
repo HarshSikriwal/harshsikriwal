@@ -10,6 +10,9 @@ const ProjectAbout = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleLeft = () => {
+    if (myProject?.images.length === 0) {
+      setCurrentIndex(0);
+    }
     if (myProject) {
       setCurrentIndex(
         (prev) => (prev - 1 + myProject.images.length) % myProject.images.length
@@ -17,13 +20,16 @@ const ProjectAbout = () => {
     }
   };
   const handleRight = () => {
+    if (myProject?.images.length === 0) {
+      setCurrentIndex(0);
+    }
     if (myProject) {
       setCurrentIndex((prev) => (prev + 1) % myProject?.images?.length);
     }
   };
 
   return (
-    <div className=" flex flex-col h-full w-full border-1 relative">
+    <div className=" flex  h-full w-full border-1 relative">
       <ChevronLeft onClick={handleLeft} className="absolute top-64 z-50" />
       {projectDetails.map((project) => (
         <ProjectImages
@@ -31,6 +37,9 @@ const ProjectAbout = () => {
           project={project}
           currentIndex={currentIndex}
         />
+      ))}
+      {myProject?.images?.map((_, i) => (
+        <Circle key={i} className={i === currentIndex ? "fill-white" : ""} />
       ))}
       <ChevronRight
         onClick={handleRight}

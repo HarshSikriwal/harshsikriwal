@@ -55,6 +55,23 @@ export const projectDetails = [
     gitHubLink: "https://github.com/HarshSikriwal/NeeliChidiya",
   },
   {
+    name: "Apps Data Visualizer",
+    type: "Front-End/Data Visualization",
+    duration: "Nov23",
+    tech: "NextJs, ReactJs, TypeScript, Tailwind, Observable Plot, ShadCn/UI",
+    description:
+      "A front-end web development project where I designed interactive data visualizations for various Google Play Store apps, including filtering options and user reviews integration",
+    images: [
+      "/projects-images/app-data-images/ic.png",
+      "/projects-images/app-data-images/iu.png",
+      "/projects-images/app-data-images/ru.png",
+      "/projects-images/app-data-images/Filters.png",
+      "/projects-images/app-data-images/hover.png",
+      "/projects-images/app-data-images/click.png",
+    ],
+    websiteLink: "https://segwise-assign.vercel.app/",
+  },
+  {
     name: "Github Finder",
     type: "API Integration",
     duration: "June23",
