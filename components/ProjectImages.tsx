@@ -20,7 +20,7 @@ const ProjectImages = ({
       key={project.name}
     >
       {project.images.map((image, index) => (
-        <div key={index} className={index === currentIndex ? "" : "hidden"}>
+        <div key={index} className={index === currentIndex ? "" : "invisible"}>
           <Image
             src={image}
             alt="image"

@@ -1,6 +1,6 @@
 import { ProjectContext } from "@/context/ProjectContext";
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProjectImages from "./ProjectImages";
 import { projectDetails } from "@/projectDetails";
 import { ChevronLeft, ChevronRight, Circle } from "lucide-react";
@@ -28,22 +28,46 @@ const ProjectAbout = () => {
     }
   };
 
+  useEffect(() => {
+    if (myProject === null) return;
+    setCurrentIndex(0);
+  }, [myProject]);
+
   return (
-    <div className=" flex  h-full w-full border-1 relative">
-      <ChevronLeft onClick={handleLeft} className="absolute top-64 z-50" />
-      {projectDetails.map((project) => (
-        <ProjectImages
-          key={project.name}
-          project={project}
-          currentIndex={currentIndex}
-        />
-      ))}
-      {myProject?.images?.map((_, i) => (
-        <Circle key={i} className={i === currentIndex ? "fill-white" : ""} />
-      ))}
+    <div className="flex h-full justify-between gap-4 pb-10">
+      <ChevronLeft
+        onClick={handleLeft}
+        className={
+          myProject?.images.length === 1
+            ? "invisible"
+            : "self-center text-secondary-color hover:text-primary-color hover:scale-105"
+        }
+      />
+      <div className="relative h-full w-full flex flex-col">
+        {projectDetails.map((project) => (
+          <ProjectImages
+            key={project.name}
+            project={project}
+            currentIndex={currentIndex}
+          />
+        ))}
+        <div className="absolute -bottom-8 self-center flex">
+          {myProject?.images?.map((_, i) => (
+            <Circle
+              className={`h-3 ${i === currentIndex ? "fill-white" : ""}`}
+              key={i}
+            />
+          ))}
+        </div>
+      </div>
+
       <ChevronRight
         onClick={handleRight}
-        className="absolute top-64 right-0 z-50"
+        className={
+          myProject?.images.length === 1
+            ? "invisible"
+            : "self-center right-0 text-secondary-color hover:text-primary-color hover:scale-105"
+        }
       />
     </div>
   );
