@@ -27,7 +27,7 @@ export const projectDetails = [
     name: "Spotify Clone",
     type: "Full-Stack",
     duration: "July23-Oct23",
-    tech: "NextJs, ReactJs, TypeScript, Tailwind, PostgreSQL, Supabase, Stripe, ShadCN/UI,...",
+    tech: "NextJs, ReactJs, TypeScript, Tailwind, PostgreSQL, Supabase, Stripe, ShadCN/UI",
     description:
       "A fully functioning Spotify Clone with subscriptions, liked songs, and many more.",
     images: [
@@ -118,7 +118,7 @@ export const projectDetails = [
     name: "Grammarly Page",
     type: "Front-End/Premium Page",
     duration: "Nov22",
-    tech: "React, NextJs, Tailwind, TypeScript,...",
+    tech: "React, NextJs, Tailwind, TypeScript",
     description:
       "Premium Page for grammarly created as a assignmentfeaturing sleek design and captivating animations for a engaging user experience",
     images: [
