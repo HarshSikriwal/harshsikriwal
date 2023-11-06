@@ -1,15 +1,9 @@
 import { ProjectContext } from "@/context/ProjectContext";
 import { projectDetails } from "@/projectDetails";
 import clsx from "clsx";
-import {
-  AnimatePresence,
-  Variants,
-  animate,
-  motion,
-  useAnimate,
-} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const variantToScale = {
   first: 0.75,

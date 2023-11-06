@@ -1,10 +1,7 @@
 import { ProjectContext } from "@/context/ProjectContext";
-import { projectDetails } from "@/projectDetails";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Circle, MoveUpRight } from "lucide-react";
-import Image from "next/image";
+import { MoveUpRight } from "lucide-react";
 import Link from "next/link";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { SkillBadge } from "./SkillBadge";
 
 const ProjectAbout = () => {
@@ -31,7 +28,7 @@ const ProjectAbout = () => {
                 rounded-lg w-20 
                 text-center border-secondary-color 
                 text-secondary-color text-sm 
-                hover:text-primary-color hover:scale-105 
+                hover:text-primary-color hover:scale-[0.95]
                 hover:border-primary-color
                 "
           >
@@ -49,7 +46,7 @@ const ProjectAbout = () => {
                  border-2 px-2 py-1
                  text-sm w-20 text-center rounded-lg 
                  border-secondary-color text-secondary-color 
-                 hover:text-primary-color hover:scale-105 
+                 hover:text-primary-color hover:scale-[0.95] 
                  hover:border-primary-color
                  "
           >

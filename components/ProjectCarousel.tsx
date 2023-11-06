@@ -1,10 +1,8 @@
 import { ProjectContext } from "@/context/ProjectContext";
-import Image from "next/image";
-import { useContext, useEffect, useState, useTransition } from "react";
-import ProjectImages from "./ProjectImages";
-import { projectDetails } from "@/projectDetails";
 import { ChevronLeft, ChevronRight, Circle } from "lucide-react";
+import { useContext, useEffect, useState, useTransition } from "react";
 import ProjectAbout from "./ProjectAbout";
+import ProjectImages from "./ProjectImages";
 
 const ProjectCarousel = () => {
   const { myProject } = useContext(ProjectContext);

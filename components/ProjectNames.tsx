@@ -1,14 +1,5 @@
-import { ProjectContext } from "@/context/ProjectContext";
 import { projectDetails } from "@/projectDetails";
 
-import clsx from "clsx";
-import {
-  AnimatePresence,
-  Variants,
-  animate,
-  motion,
-  useAnimate,
-} from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useRef, useState } from "react";
 import SingleProject from "./SingleProject";
@@ -56,19 +47,7 @@ const ProjectNames = () => {
             key={i}
           />
         ))}
-        {/* <SingleProject
-          projectIndex={trio[0]}
-          variant="first"
-          animationType={animationType}
-        />
-        <SingleProject projectIndex={trio[1]} variant="before" />
-        <SingleProject projectIndex={trio[2]} variant="spotlight" />
-        <SingleProject projectIndex={trio[3]} variant="after" />
-        <SingleProject
-          projectIndex={trio[4]}
-          variant="last"
-          animationType={animationType}
-        /> */}
+
         <ChevronDown onClick={onDown} />
       </div>
     </>

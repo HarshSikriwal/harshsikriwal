@@ -23,8 +23,6 @@ export function SkillBadge({ skills }: { skills: string | undefined }) {
     Bootstrap: "/tech-logos/bootstrap.svg",
   };
 
-  const skillArray = skills?.split(", ");
-
   return (
     <div className="w-2/3 flex flex-wrap gap-2 ">
       {skills?.split(", ").map((skill) => (

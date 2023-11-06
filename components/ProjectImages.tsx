@@ -1,12 +1,7 @@
 import { ProjectContext } from "@/context/ProjectContext";
-import { projectDetails } from "@/projectDetails";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Circle, MoveUpRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect, useContext } from "react";
-import { SkillBadge } from "./SkillBadge";
-import ProjectAbout from "./ProjectAbout";
+import { useContext } from "react";
 
 const ProjectImages = ({
   currentIndex,
