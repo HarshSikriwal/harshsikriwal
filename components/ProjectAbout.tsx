@@ -1,6 +1,6 @@
 import { ProjectContext } from "@/context/ProjectContext";
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useTransition } from "react";
 import ProjectImages from "./ProjectImages";
 import { projectDetails } from "@/projectDetails";
 import { ChevronLeft, ChevronRight, Circle } from "lucide-react";
@@ -8,24 +8,38 @@ import { ChevronLeft, ChevronRight, Circle } from "lucide-react";
 const ProjectAbout = () => {
   const { myProject } = useContext(ProjectContext);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [left, setLeft] = useState(false);
+  const [_, start] = useTransition();
+  // const [right, setRight] = useState(false);
 
   const handleLeft = () => {
-    if (myProject?.images.length === 0) {
-      setCurrentIndex(0);
-    }
-    if (myProject) {
-      setCurrentIndex(
-        (prev) => (prev - 1 + myProject.images.length) % myProject.images.length
-      );
-    }
+    setLeft(true);
+
+    start(() => {
+      if (myProject?.images.length === 0) {
+        setCurrentIndex(0);
+      }
+      if (myProject) {
+        setCurrentIndex(
+          (prev) =>
+            (prev - 1 + myProject.images.length) % myProject.images.length
+        );
+      }
+    });
+    // setRight(false);
   };
   const handleRight = () => {
-    if (myProject?.images.length === 0) {
-      setCurrentIndex(0);
-    }
-    if (myProject) {
-      setCurrentIndex((prev) => (prev + 1) % myProject?.images?.length);
-    }
+    setLeft(false);
+    start(() => {
+      if (myProject?.images.length === 0) {
+        setCurrentIndex(0);
+      }
+      if (myProject) {
+        setCurrentIndex((prev) => (prev + 1) % myProject?.images?.length);
+      }
+    });
+
+    // setRight(true);
   };
 
   useEffect(() => {
@@ -52,7 +66,11 @@ const ProjectAbout = () => {
               currentIndex={currentIndex}
             />
           ))} */}
-          <ProjectImages currentIndex={currentIndex} />
+          <ProjectImages
+            currentIndex={currentIndex}
+            left={left}
+            // right={right}
+          />
         </div>
         <div className=" flex z-[500]">
           {myProject?.images?.map((_, i) => (

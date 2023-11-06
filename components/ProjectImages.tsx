@@ -5,24 +5,53 @@ import { ChevronLeft, ChevronRight, Circle } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect, useContext } from "react";
 
-const ProjectImages = ({ currentIndex }: { currentIndex: number }) => {
+const ProjectImages = ({
+  currentIndex,
+  left,
+}: // right,
+{
+  currentIndex: number;
+  left: boolean;
+  // right: boolean;
+}) => {
   const { myProject } = useContext(ProjectContext);
 
+  const directionVariants = {
+    enterLeft: {
+      x: "100%",
+      opacity: 0,
+    },
+    enterRight: {
+      x: "-100%",
+      opacity: 0,
+    },
+    exitRight: {
+      x: "-100%",
+      opacity: 0,
+    },
+    exitLeft: {
+      x: "100%",
+      opacity: 0,
+    },
+  };
+
   return (
-    <AnimatePresence mode="popLayout">
+    <AnimatePresence mode="popLayout" initial={false}>
       <motion.div
         key={currentIndex}
-        className="w-full h-full"
-        initial={{ opacity: 0, x: "100%" }}
+        className="w-full h-full relative"
+        initial={left ? "enterLeft" : "enterRight"}
         animate={{ opacity: 1, x: "0" }}
-        exit={{ opacity: 0, x: "-100%" }}
+        exit={left ? "exitRight" : "exitLeft"}
         transition={{ duration: 0.5, type: "spring", bounce: 0 }}
+        variants={directionVariants}
       >
         <Image
           src={myProject?.images[currentIndex]!}
           alt="image"
           fill
           style={{ objectFit: "contain" }}
+          priority={true}
         />
       </motion.div>
     </AnimatePresence>
