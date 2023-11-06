@@ -5,31 +5,27 @@ import { ChevronLeft, ChevronRight, Circle } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect, useContext } from "react";
 
-const ProjectImages = ({
-  project,
-  currentIndex,
-}: {
-  project: (typeof projectDetails)[0];
-  currentIndex: number;
-}) => {
+const ProjectImages = ({ currentIndex }: { currentIndex: number }) => {
   const { myProject } = useContext(ProjectContext);
 
   return (
-    <div
-      className={` ${project.name === myProject?.name ? "" : "invisible"}`}
-      key={project.name}
-    >
-      {project.images.map((image, index) => (
-        <div key={index} className={index === currentIndex ? "" : "invisible"}>
-          <Image
-            src={image}
-            alt="image"
-            fill
-            style={{ objectFit: "contain" }}
-          />
-        </div>
-      ))}
-    </div>
+    <AnimatePresence mode="popLayout">
+      <motion.div
+        key={currentIndex}
+        className="w-full h-full"
+        initial={{ opacity: 0, x: "100%" }}
+        animate={{ opacity: 1, x: "0" }}
+        exit={{ opacity: 0, x: "-100%" }}
+        transition={{ duration: 0.5, type: "spring", bounce: 0 }}
+      >
+        <Image
+          src={myProject?.images[currentIndex]!}
+          alt="image"
+          fill
+          style={{ objectFit: "contain" }}
+        />
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

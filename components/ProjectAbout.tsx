@@ -34,7 +34,7 @@ const ProjectAbout = () => {
   }, [myProject]);
 
   return (
-    <div className="flex h-full justify-between gap-4 pb-10">
+    <div className="flex h-full justify-between gap-4">
       <ChevronLeft
         onClick={handleLeft}
         className={
@@ -43,18 +43,23 @@ const ProjectAbout = () => {
             : "self-center text-secondary-color hover:text-primary-color hover:scale-105"
         }
       />
-      <div className="relative h-full w-full flex flex-col">
-        {projectDetails.map((project) => (
-          <ProjectImages
-            key={project.name}
-            project={project}
-            currentIndex={currentIndex}
-          />
-        ))}
-        <div className="absolute -bottom-8 self-center flex">
+      <div className="flex flex-col w-full h-full items-center justify-center gap-2">
+        <div className="relative h-full w-full flex items-center overflow-hidden">
+          {/* {projectDetails.map((project) => (
+            <ProjectImages
+              key={project.name}
+              project={project}
+              currentIndex={currentIndex}
+            />
+          ))} */}
+          <ProjectImages currentIndex={currentIndex} />
+        </div>
+        <div className=" flex z-[500]">
           {myProject?.images?.map((_, i) => (
             <Circle
-              className={`h-3 ${i === currentIndex ? "fill-white" : ""}`}
+              className={`h-3 transition-all duration-500  ${
+                i === currentIndex ? "fill-white scale-[1.3]" : ""
+              }`}
               key={i}
             />
           ))}
