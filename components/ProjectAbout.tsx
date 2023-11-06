@@ -1,97 +1,65 @@
 import { ProjectContext } from "@/context/ProjectContext";
-import Image from "next/image";
-import { useContext, useEffect, useState, useTransition } from "react";
-import ProjectImages from "./ProjectImages";
 import { projectDetails } from "@/projectDetails";
-import { ChevronLeft, ChevronRight, Circle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, Circle, MoveUpRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState, useEffect, useContext } from "react";
+import { SkillBadge } from "./SkillBadge";
 
 const ProjectAbout = () => {
   const { myProject } = useContext(ProjectContext);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [left, setLeft] = useState(false);
-  const [_, start] = useTransition();
-  // const [right, setRight] = useState(false);
-
-  const handleLeft = () => {
-    setLeft(true);
-
-    start(() => {
-      if (myProject?.images.length === 0) {
-        setCurrentIndex(0);
-      }
-      if (myProject) {
-        setCurrentIndex(
-          (prev) =>
-            (prev - 1 + myProject.images.length) % myProject.images.length
-        );
-      }
-    });
-    // setRight(false);
-  };
-  const handleRight = () => {
-    setLeft(false);
-    start(() => {
-      if (myProject?.images.length === 0) {
-        setCurrentIndex(0);
-      }
-      if (myProject) {
-        setCurrentIndex((prev) => (prev + 1) % myProject?.images?.length);
-      }
-    });
-
-    // setRight(true);
-  };
-
-  useEffect(() => {
-    if (myProject === null) return;
-    setCurrentIndex(0);
-  }, [myProject]);
 
   return (
-    <div className="flex h-full justify-between gap-4">
-      <ChevronLeft
-        onClick={handleLeft}
-        className={
-          myProject?.images.length === 1
-            ? "invisible"
-            : "self-center text-secondary-color hover:text-primary-color hover:scale-105"
-        }
-      />
-      <div className="flex flex-col w-full h-full items-center justify-center gap-2">
-        <div className="relative h-full w-full flex items-center overflow-hidden">
-          {/* {projectDetails.map((project) => (
-            <ProjectImages
-              key={project.name}
-              project={project}
-              currentIndex={currentIndex}
-            />
-          ))} */}
-          <ProjectImages
-            currentIndex={currentIndex}
-            left={left}
-            // right={right}
-          />
-        </div>
-        <div className=" flex z-[500]">
-          {myProject?.images?.map((_, i) => (
-            <Circle
-              className={`h-3 transition-all duration-500  ${
-                i === currentIndex ? "fill-white scale-[1.3]" : ""
-              }`}
-              key={i}
-            />
-          ))}
-        </div>
+    <div className="absolute h-full w-full flex flex-col px-8 py-24 gap-6 z-[20000] bg-black bg-opacity-90 invisible group-hover:visible">
+      <div>
+        <h3 className="text-4xl font-semibold">{myProject?.name}</h3>
       </div>
-
-      <ChevronRight
-        onClick={handleRight}
-        className={
-          myProject?.images.length === 1
-            ? "invisible"
-            : "self-center right-0 text-secondary-color hover:text-primary-color hover:scale-105"
-        }
-      />
+      <div>
+        <p className="w-2/3 text-2xl mb-4 leading-7">
+          {myProject?.description}
+        </p>
+        <SkillBadge skills={myProject?.tech} />
+      </div>
+      <div className="flex gap-4">
+        {myProject?.websiteLink && (
+          <Link
+            target="_blank"
+            href={myProject?.websiteLink}
+            className="
+                border-2 px-2 py-1 
+                rounded-lg w-20 
+                text-center border-secondary-color 
+                text-secondary-color text-sm 
+                hover:text-primary-color hover:scale-105 
+                hover:border-primary-color
+                "
+          >
+            <div className="flex justify-center gap-1 items-center">
+              <span>Live</span>
+              <MoveUpRight className="h-4" />
+            </div>
+          </Link>
+        )}
+        {myProject?.gitHubLink && (
+          <Link
+            target="_blank"
+            href={myProject?.gitHubLink}
+            className="
+                 border-2 px-2 py-1
+                 text-sm w-20 text-center rounded-lg 
+                 border-secondary-color text-secondary-color 
+                 hover:text-primary-color hover:scale-105 
+                 hover:border-primary-color
+                 "
+          >
+            <div className="flex justify-between items-center">
+              <span>GitHub</span>
+              <MoveUpRight className="h-4" />
+            </div>
+          </Link>
+        )}
+      </div>
     </div>
   );
 };

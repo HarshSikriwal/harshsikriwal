@@ -1,15 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 
-import { projectDetails } from "@/projectDetails";
-import ProjectDetails from "@/components/ProjectAbout";
 import ProjectNames from "@/components/ProjectNames";
+import ProjectCarousel from "@/components/ProjectCarousel";
 
 const Projects = () => {
   return (
     <div className="flex justify-between py-8 grow">
       <div className="basis-2/3">
-        <ProjectDetails />
+        <ProjectCarousel />
       </div>
       <div className="h-full relative grow">
         <ProjectNames />

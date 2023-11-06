@@ -24,8 +24,6 @@ export function SkillBadge({ skills }: { skills: string | undefined }) {
   };
 
   const skillArray = skills?.split(", ");
-  console.log(skillArray);
-  console.log(logoPath["React"]);
 
   return (
     <div className="w-2/3 flex flex-wrap gap-2 ">
