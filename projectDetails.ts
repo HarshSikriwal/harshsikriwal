@@ -3,7 +3,7 @@ export const projectDetails = [
     name: "Apna Ghar",
     type: "Full-Stack",
     duration: "June23-Ongoing",
-    tech: "React, Vite, Tailwind, DaisyUI, React-Router, Authentication, Firebase",
+    tech: "React, Vite, Tailwind, DaisyUI, React-Router, Firebase",
     description:
       "Introducing 'Apna Ghar', a web application where users can effortlessly list properties for rent or sale and engage in conversations with potential buyers",
     images: [
@@ -17,7 +17,7 @@ export const projectDetails = [
     name: "BuzzOut",
     type: "Full-Stack",
     duration: "Aug23-Ongoing",
-    tech: "NextJs, ReactJs, TypeScript, Tailwind, shadcn/ui, PostgreSQL, Supabase",
+    tech: "NextJs, React, TypeScript, Tailwind, Shadcn/UI, PostgreSQL, Supabase",
     description:
       "Buzzout, a lighthearted website, offers a collection of random games to entertain and bring laughter to users.",
     images: ["/projects-images/buzzout-images/home.png"],
@@ -27,7 +27,7 @@ export const projectDetails = [
     name: "Spotify Clone",
     type: "Full-Stack",
     duration: "July23-Oct23",
-    tech: "NextJs, ReactJs, TypeScript, Tailwind, PostgreSQL, Supabase, Stripe, ShadCN/UI",
+    tech: "NextJs, React, TypeScript, Tailwind, PostgreSQL, Supabase, Stripe, Shadcn/UI",
     description:
       "A fully functioning Spotify Clone with subscriptions, liked songs, and many more.",
     images: [
@@ -44,7 +44,7 @@ export const projectDetails = [
     name: "Neeli Chidiya",
     type: "Full-Stack",
     duration: "June23-July23",
-    tech: "NextJs, ReactJs, TypeScript, Tailwind, PostgreSQL, Supabase",
+    tech: "NextJs, React, TypeScript, Tailwind, PostgreSQL, Supabase",
     description:
       "A minimalist platform for real-time communication, allowing users to write, like, and interact with each other.",
     images: [
@@ -58,7 +58,7 @@ export const projectDetails = [
     name: "Apps Data Visualizer",
     type: "Front-End/Data Visualization",
     duration: "Nov23",
-    tech: "NextJs, ReactJs, TypeScript, Tailwind, Observable Plot, ShadCn/UI",
+    tech: "NextJs, React, TypeScript, Tailwind, Observable Plot, Shadcn/UI",
     description:
       "A front-end web development project where I designed interactive data visualizations for various Google Play Store apps, including filtering options and user reviews integration",
     images: [
@@ -75,7 +75,7 @@ export const projectDetails = [
     name: "Github Finder",
     type: "API Integration",
     duration: "June23",
-    tech: "ReactJs, JavaScript, Tailwind, DaisyUI, GitHubAPI, REST",
+    tech: "React, JavaScript, Tailwind, DaisyUI, GitHubAPI, REST",
     description:
       "A web app that enables users to easily search for any GitHub profile and displays comprehensive GitHub details in a user-friendly interface, utilizing the GitHub API.",
     images: [
@@ -104,7 +104,7 @@ export const projectDetails = [
     name: "BlockFlow Page",
     type: "Front-End/Landing Page",
     duration: "Aug23",
-    tech: "ReactJs, TypeScript, Tailwind, Framer-Motion",
+    tech: "React, TypeScript, Tailwind, Framer-Motion",
     description:
       "A landing page for BlockFlow having seamlessly transitions between light and dark themes for a dynamic user experience.",
     images: [

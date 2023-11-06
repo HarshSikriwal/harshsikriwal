@@ -53,7 +53,9 @@ const ProjectImages = ({
             <h3 className="text-4xl font-semibold">{myProject?.name}</h3>
           </div>
           <div>
-            <p className="w-2/3 text-xl pb-2">{myProject?.description}</p>
+            <p className="w-2/3 text-2xl mb-4 leading-7">
+              {myProject?.description}
+            </p>
             <SkillBadge skills={myProject?.tech} />
           </div>
           <div className="flex gap-4">
