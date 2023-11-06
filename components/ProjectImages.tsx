@@ -52,6 +52,7 @@ const ProjectImages = ({
           fill
           style={{ objectFit: "contain" }}
           priority={true}
+          loading="eager"
         />
       </motion.div>
     </AnimatePresence>
