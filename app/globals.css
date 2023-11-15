@@ -29,3 +29,17 @@
 .project-grayscale:hover {
   filter: blur(20px) grayscale(20);
 }
+
+.custom-textarea {
+  resize: none; /* Disable resizing of the textarea */
+  /* background-attachment: local; */
+  background-image: repeating-linear-gradient(
+    black,
+    black 30px,
+    #ccc 30px,
+    #ccc 30px,
+    black 31px
+  );
+  line-height: 31px;
+  padding: 0px 10px;
+}
