@@ -4,6 +4,7 @@ import React from "react";
 type mailDataType = {
   userName: string;
   userEmail: string;
+  userSubject: string;
   userMessage: string;
 };
 
@@ -19,10 +20,12 @@ const contact = async () => {
     const name = String(formData.get("name"));
     const email = String(formData.get("email"));
     const message = String(formData.get("message"));
+    const subject = String(formData.get("subject"));
 
     const mailData: mailDataType = {
       userName: name,
       userEmail: email,
+      userSubject: subject,
       userMessage: message,
     };
 
@@ -67,6 +70,16 @@ const contact = async () => {
             name="email"
             required
             className="w-2/3 bg-transparent border-b-2  focus:outline-none border-b-secondary-color"
+          />
+        </div>
+        <div className="flex flex-col ">
+          <label htmlFor="subject" className="text-secondary-color mb-1">
+            Subject
+          </label>
+          <input
+            name="subject"
+            required
+            className="w-full bg-transparent border-b-2  focus:outline-none border-b-secondary-color"
           />
         </div>
         <label className="flex flex-col gap-2 mt-6">
