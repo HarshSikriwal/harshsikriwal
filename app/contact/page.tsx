@@ -10,6 +10,12 @@ type mailDataType = {
 const contact = async () => {
   const sendMail = async (formData: FormData) => {
     "use server";
+
+    const baseUrl =
+      process.env.NODE_ENV === "production"
+        ? "https://harshsikriwal.vercel.app"
+        : process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
     const name = String(formData.get("name"));
     const email = String(formData.get("email"));
     const message = String(formData.get("message"));
@@ -19,7 +25,8 @@ const contact = async () => {
       userEmail: email,
       userMessage: message,
     };
-    const response = await fetch(`http://localhost:3000/api/send`, {
+
+    const response = await fetch(`${baseUrl}/api/send`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
