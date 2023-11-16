@@ -49,7 +49,7 @@ const contact = async () => {
       </div>
       <form
         className="flex flex-col gap-8 h-full basis-7/12 border-2 
-      rounded-md py-5 px-3 border-secondary-color"
+      rounded-md py-2 px-3 border-secondary-color"
         action={sendMail}
       >
         <div className="flex flex-col">
@@ -82,7 +82,7 @@ const contact = async () => {
             className="w-full bg-transparent border-b-2  focus:outline-none border-b-secondary-color"
           />
         </div>
-        <label className="flex flex-col gap-2 mt-6">
+        <label className="flex flex-col gap-2 mt-2">
           <span className="text-secondary-color mb-1">Message</span>
           <textarea
             name="message"
@@ -96,7 +96,7 @@ const contact = async () => {
           type="submit"
           className="flex gap-2
           items-center
-          self-start border-2 px-4 py-1 mt-4
+          self-start border-2 px-4 py-1
           text-xl 
           text-secondary-color 
           border-secondary-color 
