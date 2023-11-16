@@ -36,9 +36,8 @@
   background-image: repeating-linear-gradient(
     black,
     black 30px,
-    #ccc 30px,
-    #ccc 30px,
-    black 31px
+    var(--secondary-color) 30px,
+    var(--secondary-color) 31px
   );
   line-height: 31px;
   padding: 0px 10px;
