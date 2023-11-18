@@ -1,5 +1,7 @@
 import { sendMailAction } from "@/action/sendMailAction";
 import { Send } from "lucide-react";
+import { redirect } from "next/navigation";
+import MailError from "./components/MailError";
 
 type mailDataType = {
   userName: string;
@@ -25,10 +27,17 @@ const contact = () => {
     };
 
     const error = await sendMailAction(mailData);
+    if (!error) {
+      redirect("/contact?success=true");
+      return;
+    }
+
+    redirect(`/contact?error=${true}`);
   };
 
   return (
     <>
+      <MailError />
       <div className="h-full w-full flex justify-between gap-6">
         <div className="h-full w-full flex flex-col text-2xl basis-5/12 text-secondary-color gap-4 pt-32">
           <h4 className="text-4xl text-primary-color font-semibold">{`Let's Connect`}</h4>
