@@ -1,10 +1,8 @@
+import Navbar from "@/components/Navbar";
+import ProjectsProvider from "@/context/ProjectContext";
 import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Header from "@/components/Header";
-import DetailsProvider from "@/context/ProjectContext";
-import ProjectsProvider from "@/context/ProjectContext";
 
 const mainFont = Titillium_Web({
   subsets: ["latin"],
