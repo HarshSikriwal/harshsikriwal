@@ -1,13 +1,6 @@
-import { toast } from "react-toastify";
+import { mailDataType } from "@/app/contact/page";
 
-type mailDataType = {
-  userName: string;
-  userEmail: string;
-  userSubject: string;
-  userMessage: string;
-};
-
-export const sendMailAction = async (mailData: { [key: string]: string }) => {
+export const sendMailAction = async (mailData: mailDataType) => {
   //   "use server";
 
   const baseUrl =

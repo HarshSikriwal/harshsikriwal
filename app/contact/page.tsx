@@ -2,13 +2,12 @@ import { sendMailAction } from "@/action/sendMailAction";
 import { Send } from "lucide-react";
 import { redirect } from "next/navigation";
 import MailError from "./components/MailError";
+import { revalidatePath } from "next/cache";
 
-type mailDataType = {
-  userName: string;
-  userEmail: string;
-  userSubject: string;
-  userMessage: string;
-};
+export type mailDataType = Record<
+  "userName" | "userEmail" | "userSubject" | "userMessage",
+  string
+>;
 
 const contact = () => {
   const sendMail = async (formData: FormData) => {
@@ -27,9 +26,9 @@ const contact = () => {
     };
 
     const error = await sendMailAction(mailData);
+
     if (!error) {
       redirect("/contact?success=true");
-      return;
     }
 
     redirect(`/contact?error=${true}`);
@@ -50,6 +49,7 @@ const contact = () => {
           className="flex flex-col gap-8 h-full basis-7/12 border-2 
         rounded-md py-2 px-3 border-secondary-color"
           action={sendMail}
+          id="formdata"
         >
           <div className="flex flex-col">
             <label htmlFor="name" className="text-secondary-color mb-1">

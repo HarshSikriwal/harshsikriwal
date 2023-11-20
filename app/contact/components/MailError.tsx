@@ -15,6 +15,7 @@ function MailError() {
         description: "Your Mail sent successfully",
         duration: 3000,
       });
+      document.getElementById("formdata")?.reset();
       setTimeout(() => {
         router.back();
       }, 0);
@@ -23,7 +24,7 @@ function MailError() {
       toast({
         title: "error",
         description: "Error! Please check the details and try again",
-        duration: 3000,
+        duration: 2000,
         variant: "destructive",
       });
       setTimeout(() => {
