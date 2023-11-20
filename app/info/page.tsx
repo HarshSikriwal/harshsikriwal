@@ -5,7 +5,7 @@ import Books from "./components/Books";
 
 const info = () => {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 [&>*]:h-[400px]">
       <Poems />
       <Football />
       <Books />
