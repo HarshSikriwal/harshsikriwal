@@ -15,7 +15,7 @@ function MailError() {
         description: "Your Mail sent successfully",
         duration: 3000,
       });
-      document.getElementById("formdata")?.reset();
+      (document.getElementById("formdata") as HTMLFormElement).reset();
       setTimeout(() => {
         router.back();
       }, 0);
@@ -31,6 +31,7 @@ function MailError() {
         router.back();
       }, 0);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   return null;
