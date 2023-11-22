@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 const Card = ({
   className,
   style,
+  index,
+  updateState,
 }: {
   className?: string;
   style?: React.CSSProperties;
+  index: number;
+  updateState: (index: number) => void;
 }) => {
-  const [animate, setAnimate] = useState(false);
+  const handleClick = () => updateState(index);
   return (
     <div
       className={twMerge(
@@ -17,7 +21,7 @@ const Card = ({
         className
       )}
       style={style}
-      onClick={() => setAnimate(true)}
+      onClick={handleClick}
     ></div>
   );
 };
