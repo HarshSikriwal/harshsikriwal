@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Card from "./Card";
+import Image from "next/image";
 
 const Poems = () => {
   const [active, setActive] = useState(false);
@@ -9,7 +10,7 @@ const Poems = () => {
   const updateState = (index: number) => setSelected(index);
   return (
     <div
-      className="relative    flex justify-between items-center group w-fit"
+      className="relative px-8 flex justify-between items-center group w-fit"
       onMouseOver={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
     >
@@ -22,7 +23,11 @@ const Poems = () => {
               index={index}
               updateState={updateState}
               className={`
-              ${selected === index ? "translate-x-[210%] h-full" : "h-[300px]"}
+              ${
+                selected === index
+                  ? "translate-x-[140%] h-full border-none w-[500px]"
+                  : "h-[300px]"
+              }
               `}
               style={
                 selected !== index
@@ -34,7 +39,9 @@ const Poems = () => {
                     }
                   : {}
               }
-            />
+            >
+              <div>Poems</div>
+            </Card>
           );
         })}
     </div>

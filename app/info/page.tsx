@@ -5,10 +5,10 @@ import Books from "./components/Books";
 
 const info = () => {
   return (
-    <div className="flex flex-col gap-24 [&>*]:h-[400px] mx-8 ">
-      <Poems />
-      <Football />
+    <div className="flex flex-col gap-24 [&>*]:h-[400px]  ">
       <Books />
+      <Football />
+      <Poems />
     </div>
   );
 };

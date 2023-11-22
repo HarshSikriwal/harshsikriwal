@@ -6,23 +6,27 @@ const Card = ({
   style,
   index,
   updateState,
+  children,
 }: {
   className?: string;
   style?: React.CSSProperties;
   index: number;
   updateState: (index: number) => void;
+  children: React.ReactNode;
 }) => {
   const handleClick = () => updateState(index);
   return (
     <div
       className={twMerge(
         `w-[400px]
-        absolute bg-secondary-color border-2 border-red-500 h-full rounded-lg transition-all`,
+        absolute bg-black border-[1px] border-stone-700 h-full rounded-lg transition-all`,
         className
       )}
       style={style}
       onClick={handleClick}
-    ></div>
+    >
+      {children}
+    </div>
   );
 };
 

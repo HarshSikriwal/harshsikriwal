@@ -2,18 +2,23 @@
 
 import { useState } from "react";
 import Card from "./Card";
+import Image from "next/image";
 
 const Books = () => {
   const [active, setActive] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
   const updateState = (index: number) => setSelected(index);
+  const books = [
+    "/books/freakonomics.png",
+    "/books/thinking_fast_and_slow.png",
+  ];
   return (
     <div
-      className="relative    flex justify-between items-center group w-fit"
+      className="relative  px-8  flex justify-between items-center group w-fit"
       onMouseOver={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
     >
-      {Array.from({ length: 3 })
+      {books
         .map((_, i, a) => 2 * (i - Math.floor(a.length / 2)))
         .map((degree, index) => {
           return (
@@ -22,7 +27,11 @@ const Books = () => {
               index={index}
               updateState={updateState}
               className={`
-              ${selected === index ? "translate-x-[210%] h-full" : "h-[300px]"}
+              ${
+                selected === index
+                  ? "translate-x-[140%] h-full border-none w-[500px]"
+                  : "h-[300px]"
+              }
               `}
               style={
                 selected !== index
@@ -34,7 +43,16 @@ const Books = () => {
                     }
                   : {}
               }
-            />
+            >
+              <div>
+                <Image
+                  src={books[index]}
+                  fill
+                  alt="Books"
+                  objectFit="contain"
+                />
+              </div>
+            </Card>
           );
         })}
     </div>
