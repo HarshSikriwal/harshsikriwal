@@ -4,17 +4,17 @@ import { twMerge } from "tailwind-merge";
 const Card = ({
   className,
   style,
-  index,
+  name,
   updateState,
   children,
 }: {
   className?: string;
   style?: React.CSSProperties;
-  index: number;
-  updateState: (index: number) => void;
+  name: string;
+  updateState: (name: string) => void;
   children: React.ReactNode;
 }) => {
-  const handleClick = () => updateState(index);
+  const handleClick = () => updateState(name);
   return (
     <div
       className={twMerge(

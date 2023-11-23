@@ -4,33 +4,46 @@ import { useState } from "react";
 import Card from "./Card";
 import Image from "next/image";
 
+let poemsTitle = ["WAQT", "SAFAR", "CHEHRA"];
+
 const Poems = () => {
   const [active, setActive] = useState(false);
-  const [selected, setSelected] = useState<number | null>(null);
-  const updateState = (index: number) => setSelected(index);
+  const [selected, setSelected] = useState<string | null>(null);
+  const updateState = (name: string) =>
+    setSelected((p) => {
+      if (selected)
+        poemsTitle = [
+          selected,
+          ...poemsTitle.filter((name) => selected !== name),
+        ];
+      return name;
+    });
   return (
     <div
       className="relative px-8 flex justify-between items-center group w-fit"
       onMouseOver={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
     >
-      {Array.from({ length: 3 })
-        .map((_, i, a) => 2 * (i - Math.floor(a.length / 2)))
-        .map((degree, index) => {
+      {poemsTitle
+        .map((image, i, a) => ({
+          degree: 2 * (i - Math.floor(a.length / 2)),
+          name: image,
+        }))
+        .map(({ name, degree }, index) => {
           return (
             <Card
               key={degree}
-              index={index}
+              name={name}
               updateState={updateState}
               className={`
-              ${
-                selected === index
-                  ? "translate-x-[140%] h-full border-none w-[500px]"
-                  : "h-[300px]"
-              }
-              `}
+            ${
+              selected === name
+                ? "translate-x-[140%] h-full border-none w-[500px]"
+                : "h-[300px]"
+            }
+            `}
               style={
-                selected !== index
+                selected !== name
                   ? {
                       rotate: active ? `${2 * degree}deg` : `${degree}deg`,
                       translate: active
@@ -40,7 +53,9 @@ const Poems = () => {
                   : {}
               }
             >
-              <div>Poems</div>
+              <div className="flex w-full h-full justify-center items-center text-3xl font-medium rounded-md">
+                {name}
+              </div>
             </Card>
           );
         })}

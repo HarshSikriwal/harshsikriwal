@@ -4,37 +4,42 @@ import { useState } from "react";
 import Card from "./Card";
 import Image from "next/image";
 
+let images = ["/books/freakonomics.png", "/books/thinking_fast_and_slow.png"];
 const Books = () => {
   const [active, setActive] = useState(false);
-  const [selected, setSelected] = useState<number | null>(null);
-  const updateState = (index: number) => setSelected(index);
-  const books = [
-    "/books/freakonomics.png",
-    "/books/thinking_fast_and_slow.png",
-  ];
+  const [selected, setSelected] = useState<string | null>(null);
+  const updateState = (name: string) =>
+    setSelected((p) => {
+      if (selected)
+        images = [selected, ...images.filter((name) => selected !== name)];
+      return name;
+    });
   return (
     <div
       className="relative  px-8  flex justify-between items-center group w-fit"
       onMouseOver={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
     >
-      {books
-        .map((_, i, a) => 2 * (i - Math.floor(a.length / 2)))
-        .map((degree, index) => {
+      {images
+        .map((image, i, a) => ({
+          degree: 2 * (i - Math.floor(a.length / 2)),
+          name: image,
+        }))
+        .map(({ name, degree }, index) => {
           return (
             <Card
               key={degree}
-              index={index}
+              name={name}
               updateState={updateState}
               className={`
               ${
-                selected === index
+                selected === name
                   ? "translate-x-[140%] h-full border-none w-[500px]"
                   : "h-[300px]"
               }
               `}
               style={
-                selected !== index
+                selected !== name
                   ? {
                       rotate: active ? `${2 * degree}deg` : `${degree}deg`,
                       translate: active
@@ -46,7 +51,7 @@ const Books = () => {
             >
               <div>
                 <Image
-                  src={books[index]}
+                  src={images[index]}
                   fill
                   alt="Books"
                   objectFit="contain"
