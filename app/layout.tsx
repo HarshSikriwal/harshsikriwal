@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${mainFont.className} ${mainFont.variable} flex flex-col min-h-screen text-primary-color  bg-[#020207] px-32 py-4 `}
+        className={`${mainFont.className} ${mainFont.variable} flex flex-col min-h-screen text-primary-color  bg-[#020207] px-32 py-4 custom-scrollbar`}
       >
         <Navbar />
         <ProjectsProvider>{children}</ProjectsProvider>

@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Card from "./Card";
 import Image from "next/image";
+import { poemDetails } from "@/poemDetails";
 
-let poemsTitle = ["WAQT", "SAFAR", "CHEHRA"];
+let poems = poemDetails;
 
 const Poems = () => {
   const [active, setActive] = useState(false);
@@ -12,9 +13,9 @@ const Poems = () => {
   const updateState = (name: string) =>
     setSelected((p) => {
       if (selected)
-        poemsTitle = [
-          selected,
-          ...poemsTitle.filter((name) => selected !== name),
+        poems = [
+          poems.find((p) => p.title === selected)!,
+          ...poems.filter((name) => selected !== name.title),
         ];
       return name;
     });
@@ -24,12 +25,14 @@ const Poems = () => {
       onMouseOver={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
     >
-      {poemsTitle
-        .map((image, i, a) => ({
+      {poems
+        .map((poem, i, a) => ({
           degree: 2 * (i - Math.floor(a.length / 2)),
-          name: image,
+          name: poem.title,
+          url: poem.url,
+          content: poem.content,
         }))
-        .map(({ name, degree }, index) => {
+        .map(({ name, degree, url, content }, index) => {
           return (
             <Card
               key={degree}
@@ -53,9 +56,21 @@ const Poems = () => {
                   : {}
               }
             >
-              <div className="flex w-full h-full justify-center items-center text-3xl font-medium rounded-md">
-                {name}
-              </div>
+              <div
+                className="absolute w-full h-full top-0 left-0 bg-cover blur-sm -z-10"
+                style={{
+                  backgroundImage: `url(${url})`,
+                }}
+              ></div>
+              <div
+                className="h-full min-h-0 w-full justify-center items-center text-lg text-center font-medium my-auto rounded-md overflow-y-auto custom-scrollbar bg-black/50 leading-7 [&>p]:my-4 py-auto"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    selected === name
+                      ? content
+                      : `<div class='flex justify-center text-3xl items-center w-full h-full'>${name}</div>`,
+                }}
+              ></div>
             </Card>
           );
         })}
