@@ -3,6 +3,7 @@ import ProjectsProvider from "@/context/ProjectContext";
 import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 const mainFont = Titillium_Web({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
       >
         <Navbar />
         <ProjectsProvider>{children}</ProjectsProvider>
+        <Analytics />
       </body>
     </html>
   );
