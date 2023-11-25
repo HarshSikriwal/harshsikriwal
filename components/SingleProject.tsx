@@ -5,18 +5,10 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useContext, useEffect, useState } from "react";
 
-const variantToScale = {
-  first: 0.75,
-  before: 1,
-  spotlight: 2,
-  after: 1,
-  last: 0.75,
-};
-
 function SingleProject({
   projectIndex,
   variant,
-  animationType,
+  index,
 }: {
   projectIndex: number;
   variant:
@@ -27,7 +19,7 @@ function SingleProject({
     | "spotlight"
     | "top"
     | "bottom";
-  animationType?: "up" | "down" | null;
+  index: number;
 }) {
   const { myProject, setMyProject } = useContext(ProjectContext);
   const [project, setProject] = useState(projectDetails.at(projectIndex)!);
@@ -43,44 +35,6 @@ function SingleProject({
   return (
     <AnimatePresence mode="popLayout">
       <motion.div
-        // initial={{
-        //   y: 0,
-        //   // opacity: 1,
-        //   // fontSize: `${variantToScale[variant]}rem`,
-        // }}
-        // animate={{
-        //   y: 0,
-        //   // opacity: 1
-        // }}
-        // transition={{ duration: 0.8 }}
-        // exit={{
-        //   y: 100,
-        //   // opacity: 0
-        // }}
-        // initial={{
-        //   y:
-        //     variant === "first"
-        //       ? animationType === "down"
-        //         ? -100
-        //         : animationType === "up"
-        //         ? 100
-        //         : 0
-        //       : variant === "last" && animationType === "up"
-        //       ? 100
-        //       : 0,
-
-        //   translateX: variant === "first" && animationType ? "10px" : 0,
-        // }}
-        // animate={{ y: 0, translateX: variant === "first" ? "0px" : 0 }}
-        // exit={{
-        //   y:
-        //     variant === "last"
-        //       ? 100
-        //       : variant === "first" && animationType === "up"
-        //       ? -100
-        //       : 0,
-        //   opacity: variant === "last" ? 0 : 1,
-        // }}
         transition={{
           duration: 0.7,
           opacity: { duration: 0 },
@@ -120,15 +74,11 @@ function SingleProject({
                 variant === "spotlight",
             }
           )}
-          // animate={variant}
-          // variants={items}
         >
-          {/* <motion.div className="" >  */}
           <p className={clsx("truncate")}>{project.name}</p>
           <p className="text-sm">
             {project.type}/{project.duration}
           </p>
-          {/* </motion.div> */}
         </div>
       </motion.div>
     </AnimatePresence>

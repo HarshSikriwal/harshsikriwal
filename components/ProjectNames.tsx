@@ -5,26 +5,18 @@ import { useRef, useState } from "react";
 import SingleProject from "./SingleProject";
 
 const variants = ["first", "before", "spotlight", "after", "last"] as const;
-const a = 3;
+
 const ProjectNames = () => {
-  const [trio, setTrio] = useState(projectDetails.map((_, i) => i));
+  const [projectIndex, setProjectIndex] = useState(
+    projectDetails.map((_, i) => i)
+  );
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [animationType, setAnimationType] = useState<"up" | "down" | null>(
-    null
-  );
-
   const onDown = () => {
-    if (!animationType) {
-      setAnimationType("down");
-    }
-    setTrio((p) => p.map((i) => checkIndex(i - 1)));
+    setProjectIndex((p) => p.map((i) => checkIndex(i - 1)));
   };
   const onUp = () => {
-    if (!animationType) {
-      setAnimationType("up");
-    }
-    setTrio((p) => p.map((i) => checkIndex(i + 1)));
+    setProjectIndex((p) => p.map((i) => checkIndex(i + 1)));
   };
 
   return (
@@ -35,13 +27,14 @@ const ProjectNames = () => {
         className="h-full gap-6 flex flex-col items-end justify-between w-full overflow-hidden"
       >
         <ChevronUp onClick={onUp} />
-        {trio.map((i, index) => (
+        {projectIndex.map((i, index) => (
           <SingleProject
             projectIndex={i}
+            index={index}
             variant={(() => {
               if (index < 5) return variants[index];
               if (index === 5) return "bottom";
-              if (index === trio.length - 1) return "top";
+              if (index === projectIndex.length - 1) return "top";
               return "top";
             })()}
             key={i}
