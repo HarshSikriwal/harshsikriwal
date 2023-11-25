@@ -48,7 +48,7 @@ function SingleProject({
     <AnimatePresence mode="popLayout" initial={false}>
       <motion.div
         onClick={() => handleClick(index)}
-        // key={project.name}
+        key={project.name}
         // layoutId={project.name}
         // initial={up ? { y: "200%", x: "200%" } : { y: "-150%", x: "-200%" }}
         // animate={{ y: "0%" }}
@@ -60,7 +60,7 @@ function SingleProject({
           type: "spring",
           ease: "backOut",
         }}
-        // animate={up ? upOrDown.up : upOrDown.down}
+        layoutId={project.name}
         className={index > 4 ? "hidden" : ""}
       >
         <div
