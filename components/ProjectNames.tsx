@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import SingleProject from "./SingleProject";
 
 const variants = ["first", "before", "spotlight", "after", "last"] as const;
-
+const a = 3;
 const ProjectNames = () => {
   const [trio, setTrio] = useState(projectDetails.map((_, i) => i));
   const containerRef = useRef<HTMLDivElement>(null);
