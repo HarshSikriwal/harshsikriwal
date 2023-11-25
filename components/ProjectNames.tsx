@@ -33,7 +33,7 @@ const ProjectNames = () => {
     <>
       <div
         id="list-container"
-        className="h-full gap-6 flex flex-col items-end justify-between w-full overflow-hidden"
+        className="h-full gap-6 flex flex-col items-end justify-between w-full overflow-hidden relative"
       >
         <ChevronUp onClick={onUp} />
         {projectIndex.map((element, index) => (

@@ -29,19 +29,10 @@ function SingleProject({
   const [project, setProject] = useState(projectDetails.at(element)!);
 
   const upOrDown = {
-    fromUp: {
-      y: "-100%",
-      opacity: 0,
-    },
-    fromDown: {
+    up: {
       y: "100%",
-      opacity: 0,
     },
-    goUp: {
-      y: "-100%",
-      opacity: 0,
-    },
-    goDown: { y: "100", opacity: 0 },
+    down: { y: "-100%" },
   };
 
   useEffect(() => {
@@ -54,31 +45,27 @@ function SingleProject({
   }, [element, variant]);
 
   return (
-    <AnimatePresence mode="popLayout">
+    <AnimatePresence mode="popLayout" initial={false}>
       <motion.div
+        onClick={() => handleClick(index)}
+        // key={project.name}
+        // layoutId={project.name}
+        // initial={up ? { y: "200%", x: "200%" } : { y: "-150%", x: "-200%" }}
+        // animate={{ y: "0%" }}
         transition={{
-          duration: 3,
+          duration: 0.7,
           opacity: { duration: 0 },
           fontSize: { duration: 0 },
 
           type: "spring",
           ease: "backOut",
         }}
-        key={project.name}
-        layoutId={project.name}
-        className={clsx(
-          (variant === "top" || variant === "bottom") && "absolute",
-          variant === "top"
-            ? "top-0 invisible"
-            : variant === "bottom"
-            ? "bottom-0 invisible"
-            : ""
-        )}
-        onClick={() => handleClick(index)}
+        // animate={up ? upOrDown.up : upOrDown.down}
+        className={index > 4 ? "hidden" : ""}
       >
         <div
           className={clsx(
-            "text-right ",
+            `text-right cursor-pointer`,
             {
               "text-secondary-color":
                 variant === "before" ||
