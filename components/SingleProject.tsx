@@ -6,11 +6,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react";
 
 function SingleProject({
-  projectIndex,
+  element,
   variant,
   index,
+  handleClick,
+  up,
 }: {
-  projectIndex: number;
+  element: number;
   variant:
     | "first"
     | "before"
@@ -20,23 +22,42 @@ function SingleProject({
     | "top"
     | "bottom";
   index: number;
+  handleClick: (index: number) => void;
+  up: boolean;
 }) {
   const { myProject, setMyProject } = useContext(ProjectContext);
-  const [project, setProject] = useState(projectDetails.at(projectIndex)!);
+  const [project, setProject] = useState(projectDetails.at(element)!);
+
+  const upOrDown = {
+    fromUp: {
+      y: "-100%",
+      opacity: 0,
+    },
+    fromDown: {
+      y: "100%",
+      opacity: 0,
+    },
+    goUp: {
+      y: "-100%",
+      opacity: 0,
+    },
+    goDown: { y: "100", opacity: 0 },
+  };
 
   useEffect(() => {
-    setProject(projectDetails.at(projectIndex)!);
+    setProject(projectDetails.at(element)!);
+
     if (variant === "spotlight") {
-      if (myProject?.name === projectDetails[projectIndex].name) return;
-      setMyProject(projectDetails[projectIndex]);
+      if (myProject?.name === projectDetails[element].name) return;
+      setMyProject(projectDetails[element]);
     }
-  }, [projectIndex, variant]);
+  }, [element, variant]);
 
   return (
     <AnimatePresence mode="popLayout">
       <motion.div
         transition={{
-          duration: 0.7,
+          duration: 3,
           opacity: { duration: 0 },
           fontSize: { duration: 0 },
 
@@ -53,6 +74,7 @@ function SingleProject({
             ? "bottom-0 invisible"
             : ""
         )}
+        onClick={() => handleClick(index)}
       >
         <div
           className={clsx(
@@ -84,9 +106,5 @@ function SingleProject({
     </AnimatePresence>
   );
 }
-
-const variantToInitialY = {
-  before: -100,
-};
 
 export default SingleProject;

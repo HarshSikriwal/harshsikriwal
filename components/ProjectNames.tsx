@@ -7,37 +7,48 @@ import SingleProject from "./SingleProject";
 const variants = ["first", "before", "spotlight", "after", "last"] as const;
 
 const ProjectNames = () => {
+  const [up, setUp] = useState(false);
   const [projectIndex, setProjectIndex] = useState(
     projectDetails.map((_, i) => i)
   );
-  const containerRef = useRef<HTMLDivElement>(null);
 
   const onDown = () => {
+    setUp(false);
     setProjectIndex((p) => p.map((i) => checkIndex(i - 1)));
   };
   const onUp = () => {
+    setUp(true);
     setProjectIndex((p) => p.map((i) => checkIndex(i + 1)));
+  };
+  const handleClick = (index: number) => {
+    if (index > 2) {
+      setProjectIndex((p) => p.map((i) => checkIndex(i + index - 2)));
+    }
+    if (index < 2) {
+      setProjectIndex((p) => p.map((i) => checkIndex(i - (2 - index))));
+    }
   };
 
   return (
     <>
       <div
         id="list-container"
-        ref={containerRef}
         className="h-full gap-6 flex flex-col items-end justify-between w-full overflow-hidden"
       >
         <ChevronUp onClick={onUp} />
-        {projectIndex.map((i, index) => (
+        {projectIndex.map((element, index) => (
           <SingleProject
-            projectIndex={i}
+            element={element}
             index={index}
+            handleClick={handleClick}
+            up={up}
             variant={(() => {
               if (index < 5) return variants[index];
               if (index === 5) return "bottom";
               if (index === projectIndex.length - 1) return "top";
               return "top";
             })()}
-            key={i}
+            key={element}
           />
         ))}
 
@@ -49,10 +60,10 @@ const ProjectNames = () => {
 
 function checkIndex(p: number) {
   if (p < 0) {
-    return projectDetails.length - 1;
+    return projectDetails.length + p;
   }
-  if (p === projectDetails.length) {
-    return 0;
+  if (p >= projectDetails.length) {
+    return p % projectDetails.length;
   }
   return p;
 }

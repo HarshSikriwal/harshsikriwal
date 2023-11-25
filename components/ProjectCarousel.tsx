@@ -25,7 +25,6 @@ const ProjectCarousel = () => {
         );
       }
     });
-    // setRight(false);
   };
   const handleRight = () => {
     setLeft(false);
