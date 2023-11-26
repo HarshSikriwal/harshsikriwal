@@ -6,7 +6,7 @@ import ProjectCarousel from "@/components/ProjectCarousel";
 
 const Projects = () => {
   return (
-    <div className="flex justify-between py-8 grow">
+    <div className="flex justify-between py-8 grow gap-8">
       <div className="basis-2/3">
         <ProjectCarousel />
       </div>

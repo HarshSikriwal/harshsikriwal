@@ -11,7 +11,7 @@ const ProjectNames = () => {
     <>
       <div
         id="list-container"
-        className="h-[450px] gap-7 flex flex-col items-end justify-between w-full pr-4 custom-scrollbar overflow-y-scroll"
+        className="h-[450px] gap-6 flex flex-col justify-between w-1/3 custom-scrollbar  overflow-y-scroll fixed right-3"
       >
         {projectDetails.map((project, index) => (
           <SingleProject key={project.name} index={index} project={project} />
