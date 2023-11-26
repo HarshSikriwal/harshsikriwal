@@ -5,7 +5,7 @@ import { createContext, useState } from "react";
 export const ProjectContext = createContext<{
   myProject: (typeof projectDetails)[0] | null;
   setMyProject: React.Dispatch<
-    React.SetStateAction<(typeof projectDetails)[0] | null>
+    React.SetStateAction<(typeof projectDetails)[0]>
   >;
 }>({
   myProject: projectDetails[0],
@@ -13,8 +13,8 @@ export const ProjectContext = createContext<{
 });
 
 const ProjectsProvider = ({ children }: { children: React.ReactNode }) => {
-  const [myProject, setMyProject] = useState<(typeof projectDetails)[0] | null>(
-    null
+  const [myProject, setMyProject] = useState<(typeof projectDetails)[0]>(
+    projectDetails[0]
   );
   return (
     <ProjectContext.Provider value={{ myProject, setMyProject }}>
