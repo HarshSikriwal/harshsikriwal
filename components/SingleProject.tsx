@@ -14,10 +14,27 @@ function SingleProject({
 }) {
   const { myProject, setMyProject } = useContext(ProjectContext);
 
+  const fadeInVariants = {
+    initial: { opacity: 0 },
+    animate: (index: number) => ({
+      opacity: 1,
+
+      transition: {
+        delay: 0.05 * index,
+      },
+    }),
+  };
+
   return (
-    <motion.div
-      // key={project.name}
-      // layoutId={project.name}
+    <motion.li
+      key={project.name}
+      transition={{ duration: 0.1 }}
+      layout
+      variants={fadeInVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+      custom={index}
       className={` cursor-pointer flex items-center justify-end gap-4 w-full h-full  relative ${
         project.name === myProject?.name
           ? "text-primary-color"
@@ -26,8 +43,8 @@ function SingleProject({
       onClick={() => setMyProject(project)}
     >
       <p
-        className={`text-right text-3xl italic ${
-          myProject?.name === project.name ? "" : ""
+        className={`text-right italic ${
+          myProject?.name === project.name ? "text-3xl" : "text-2xl"
         }`}
       >
         {project.name}
@@ -43,7 +60,7 @@ function SingleProject({
       >
         {project.duration}
       </p>
-    </motion.div>
+    </motion.li>
   );
 }
 
