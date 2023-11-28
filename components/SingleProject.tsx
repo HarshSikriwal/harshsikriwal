@@ -3,7 +3,7 @@ import { projectDetails } from "@/projectDetails";
 import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 function SingleProject({
   index,
@@ -13,6 +13,13 @@ function SingleProject({
   project: (typeof projectDetails)[0];
 }) {
   const { myProject, setMyProject } = useContext(ProjectContext);
+  const projectRef = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    if (project.name === myProject?.name) {
+      projectRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [myProject]);
 
   const fadeInVariants = {
     initial: { opacity: 0 },
@@ -27,6 +34,7 @@ function SingleProject({
 
   return (
     <motion.li
+      ref={projectRef}
       key={project.name}
       transition={{ duration: 0.1 }}
       layout
