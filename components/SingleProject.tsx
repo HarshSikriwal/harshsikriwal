@@ -26,7 +26,7 @@ function SingleProject({
       onClick={() => setMyProject(project)}
     >
       <p
-        className={`text-right italic  text-3xl ${
+        className={`text-right text-3xl italic ${
           myProject?.name === project.name ? "" : ""
         }`}
       >
@@ -34,7 +34,7 @@ function SingleProject({
       </p>
       {/* <p>-</p> */}
       <p
-        className={`italic basis-1/5 self-end
+        className={` basis-1/5 self-end italic
           ${
             myProject?.name === project.name
               ? "text-xs text-white/80"
