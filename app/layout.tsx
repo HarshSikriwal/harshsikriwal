@@ -25,11 +25,7 @@ const myFont = localFont({
       weight: "700",
       style: "bold",
     },
-    {
-      path: "../public/SabonBoldItalic.ttf",
-      weight: "700",
-      style: "boldItalic",
-    },
+
     {
       path: "../public/SabonItalic.ttf",
       weight: "400",
