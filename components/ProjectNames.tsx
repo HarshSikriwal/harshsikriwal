@@ -3,7 +3,6 @@ import { projectDetails } from "@/projectDetails";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useRef, useState } from "react";
 import SingleProject from "./SingleProject";
-import { stagger } from "framer-motion";
 
 const variants = ["first", "before", "spotlight", "after", "last"] as const;
 
