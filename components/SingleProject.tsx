@@ -5,138 +5,63 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useContext, useEffect, useState } from "react";
 
-const variantToScale = {
-  first: 0.75,
-  before: 1,
-  spotlight: 2,
-  after: 1,
-  last: 0.75,
-};
-
 function SingleProject({
-  projectIndex,
-  variant,
-  animationType,
+  index,
+  project,
 }: {
-  projectIndex: number;
-  variant:
-    | "first"
-    | "before"
-    | "after"
-    | "last"
-    | "spotlight"
-    | "top"
-    | "bottom";
-  animationType?: "up" | "down" | null;
+  index: number;
+  project: (typeof projectDetails)[0];
 }) {
   const { myProject, setMyProject } = useContext(ProjectContext);
-  const [project, setProject] = useState(projectDetails.at(projectIndex)!);
 
-  useEffect(() => {
-    setProject(projectDetails.at(projectIndex)!);
-    if (variant === "spotlight") {
-      if (myProject?.name === projectDetails[projectIndex].name) return;
-      setMyProject(projectDetails[projectIndex]);
-    }
-  }, [projectIndex, variant]);
+  const fadeInVariants = {
+    initial: { opacity: 0 },
+    animate: (index: number) => ({
+      opacity: 1,
+
+      transition: {
+        delay: 0.05 * index,
+      },
+    }),
+  };
 
   return (
-    <AnimatePresence mode="popLayout">
-      <motion.div
-        // initial={{
-        //   y: 0,
-        //   // opacity: 1,
-        //   // fontSize: `${variantToScale[variant]}rem`,
-        // }}
-        // animate={{
-        //   y: 0,
-        //   // opacity: 1
-        // }}
-        // transition={{ duration: 0.8 }}
-        // exit={{
-        //   y: 100,
-        //   // opacity: 0
-        // }}
-        // initial={{
-        //   y:
-        //     variant === "first"
-        //       ? animationType === "down"
-        //         ? -100
-        //         : animationType === "up"
-        //         ? 100
-        //         : 0
-        //       : variant === "last" && animationType === "up"
-        //       ? 100
-        //       : 0,
-
-        //   translateX: variant === "first" && animationType ? "10px" : 0,
-        // }}
-        // animate={{ y: 0, translateX: variant === "first" ? "0px" : 0 }}
-        // exit={{
-        //   y:
-        //     variant === "last"
-        //       ? 100
-        //       : variant === "first" && animationType === "up"
-        //       ? -100
-        //       : 0,
-        //   opacity: variant === "last" ? 0 : 1,
-        // }}
-        transition={{
-          duration: 0.7,
-          opacity: { duration: 0 },
-          fontSize: { duration: 0 },
-
-          type: "spring",
-          ease: "backOut",
-        }}
-        key={project.name}
-        layoutId={project.name}
-        className={clsx(
-          (variant === "top" || variant === "bottom") && "absolute",
-          variant === "top"
-            ? "top-0 invisible"
-            : variant === "bottom"
-            ? "bottom-0 invisible"
-            : ""
-        )}
+    <motion.li
+      key={project.name}
+      transition={{ duration: 0.1 }}
+      layout
+      variants={fadeInVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+      custom={index}
+      className={` cursor-pointer flex items-center justify-end gap-4 w-full h-full  relative ${
+        project.name === myProject?.name
+          ? "text-primary-color"
+          : "text-secondary-color "
+      }`}
+      onClick={() => setMyProject(project)}
+    >
+      <p
+        className={`text-right italic ${
+          myProject?.name === project.name ? "text-3xl" : "text-2xl"
+        }`}
       >
-        <div
-          className={clsx(
-            "text-right ",
-            {
-              "text-secondary-color":
-                variant === "before" ||
-                variant === "after" ||
-                variant === "first" ||
-                variant === "last",
-              "text-primary-color": variant === "spotlight",
-            },
-            {
-              " text-xl [&>p:nth-child(2)]:text-xs ":
-                variant === "first" || variant === "last",
-              " text-2xl [&>p:nth-child(2)]:text-md":
-                variant === "before" || variant === "after",
-              " text-4xl leading-[50px] [&>p:nth-child(2)]:text-lg [&>p:nth-child(2)]:text-stone-400":
-                variant === "spotlight",
-            }
-          )}
-          // animate={variant}
-          // variants={items}
-        >
-          {/* <motion.div className="" >  */}
-          <p className={clsx("truncate")}>{project.name}</p>
-          <p className="text-sm">
-            {project.type}/{project.duration}
-          </p>
-          {/* </motion.div> */}
-        </div>
-      </motion.div>
-    </AnimatePresence>
+        {project.name}
+      </p>
+      {/* <p>-</p> */}
+      <p
+        className={` basis-1/5 self-end italic
+          ${
+            myProject?.name === project.name
+              ? "text-xs text-white/80"
+              : "text-xs"
+          }`}
+      >
+        {project.duration}
+      </p>
+    </motion.li>
   );
 }
-
-const variantToInitialY = {
-  before: -100,
-};
 
 export default SingleProject;
