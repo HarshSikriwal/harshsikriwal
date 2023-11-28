@@ -34,7 +34,7 @@ const ProjectImages = ({
   };
 
   return (
-    <AnimatePresence mode="popLayout" initial={false}>
+    <AnimatePresence mode="popLayout">
       <motion.div
         key={currentIndex}
         className="w-full h-full"

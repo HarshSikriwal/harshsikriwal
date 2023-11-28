@@ -41,6 +41,7 @@
   );
   line-height: 31px;
   padding: 0px 10px;
+  scroll-behavior: smooth;
 }
 
 /* Hide the default scrollbar */
