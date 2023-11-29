@@ -38,7 +38,7 @@ const Projects = () => {
       document.removeEventListener("keyup", handleKeyUp);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [myProject]);
+  }, [myProject, setMyProject]);
 
   return (
     <div className="flex justify-between py-8 px-32 grow gap-8">
