@@ -23,12 +23,15 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <Image
-        className="rounded-full"
-        src={MyPhoto}
-        alt="profile image"
-        width={320}
-      />
+      <div className="w-fit h-fit flex justify-center items-center relative">
+        <div className="absolute bg-[#617656] w-4/5 h-4/5 top-12 -z-20 blur-3xl rounded-full"></div>
+        <Image
+          className="rounded-full"
+          src={MyPhoto}
+          alt="profile image"
+          width={750}
+        />
+      </div>
     </div>
   );
 }
