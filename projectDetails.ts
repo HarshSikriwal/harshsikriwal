@@ -15,6 +15,7 @@ export const projectDetails = [
     ],
     websiteLink: "https://spotify-clone-one-fawn.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/spotify-clone",
+    bgColor: "#075b44",
   },
   {
     name: "Neeli Chidiya",
@@ -29,6 +30,7 @@ export const projectDetails = [
     ],
     websiteLink: "https://neeli-chidiya.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/NeeliChidiya",
+    bgColor: "#253557",
   },
   {
     name: "Apps Data Visualizer",
@@ -46,6 +48,7 @@ export const projectDetails = [
       "/projects-images/app-data-images/click.png",
     ],
     websiteLink: "https://segwise-assign.vercel.app/",
+    bgColor: "#e3fe76",
   },
   {
     name: "Github Finder",
@@ -61,6 +64,7 @@ export const projectDetails = [
     ],
     websiteLink: "https://github-finder-git-main-harshsikriwal.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/GithubFinder",
+    bgColor: "#008000",
   },
   {
     name: "Link Copier",
@@ -75,6 +79,7 @@ export const projectDetails = [
       "/projects-images/link-copier-images/deleteall-confirmation.png",
     ],
     gitHubLink: "https://github.com/HarshSikriwal/LINK-COPIER",
+    bgColor: "#991b1b",
   },
   {
     name: "BlockFlow Page",
@@ -89,6 +94,7 @@ export const projectDetails = [
     ],
     websiteLink: "https://blockflow-assignment.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/blockflow-assignment",
+    bgColor: "#787b91",
   },
   {
     name: "Grammarly Page",
@@ -106,6 +112,7 @@ export const projectDetails = [
     ],
     websiteLink: "https://grammarly-premium-page.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/Grammarly-Premium-Page",
+    bgColor: "#11a683",
   },
   {
     name: "Pepsi Page ",
@@ -121,6 +128,7 @@ export const projectDetails = [
     ],
     websiteLink: "https://pepsi-ui-rosy.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/PepsiUi",
+    bgColor: "#1b549f",
   },
   {
     name: "Apna Ghar",
@@ -135,6 +143,7 @@ export const projectDetails = [
       "/projects-images/apna-ghar-images/offers.png",
     ],
     gitHubLink: "https://github.com/HarshSikriwal/Apna-Ghar",
+    bgColor: "#fde2a6",
   },
   {
     name: "BuzzOut",
@@ -145,5 +154,6 @@ export const projectDetails = [
       "Buzzout, a lighthearted website, offers a collection of random games to entertain and bring laughter to users.",
     images: ["/projects-images/buzzout-images/home.png"],
     gitHubLink: "https://github.com/HarshSikriwal/Buzz-Out",
+    bgColor: "#7e22ce",
   },
 ];

@@ -56,3 +56,8 @@
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #888; /* Color of the scrollbar handle */
 }
+
+.bg-gradient {
+  left: calc(50% - 300px);
+  top: calc(50% - 180px);
+}

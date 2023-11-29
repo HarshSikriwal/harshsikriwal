@@ -8,6 +8,7 @@ import { ProjectContext } from "@/context/ProjectContext";
 
 const Projects = () => {
   const { myProject, setMyProject } = useContext(ProjectContext);
+  // const [backgroundColor, setBackgroundColor] = useState("transparent");
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -42,7 +43,11 @@ const Projects = () => {
 
   return (
     <div className="flex justify-between py-8 px-32 grow gap-8">
-      <div className="basis-2/3">
+      <div className="basis-2/3 relative">
+        <div
+          className={`absolute bg-gradient w-[600px] h-[400px] rounded-full -z-20  blur-3xl opacity-70`}
+          style={{ backgroundColor: myProject?.bgColor }}
+        ></div>
         <ProjectCarousel />
       </div>
       <div className="h-full relative grow">
