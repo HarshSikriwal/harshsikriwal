@@ -18,7 +18,11 @@ const Navbar = () => {
         href: "/projects",
         active: pathname === "/projects",
       },
-      { label: "Info", href: "/info", active: pathname === "/info" },
+      {
+        label: "Thingsido",
+        href: "/thingsido",
+        active: pathname === "/thingsido",
+      },
       { label: "Contact", href: "/contact", active: pathname === "/contact" },
     ],
     [pathname]
