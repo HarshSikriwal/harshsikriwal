@@ -40,9 +40,26 @@ const ProjectCarousel = () => {
     // setRight(true);
   };
 
+  const handleKeyLeft = (e: KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      handleLeft();
+    }
+  };
+  const handleKeyRight = (e: KeyboardEvent) => {
+    if (e.key === "ArrowRight") {
+      handleRight();
+    }
+  };
+
   useEffect(() => {
     if (myProject === null) return;
     setCurrentIndex(0);
+    document.addEventListener("keydown", handleKeyLeft);
+    document.addEventListener("keydown", handleKeyRight);
+    return () => {
+      document.removeEventListener("keydown", handleKeyLeft);
+      document.removeEventListener("keydown", handleKeyRight);
+    };
   }, [myProject]);
 
   return (
