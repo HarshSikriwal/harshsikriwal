@@ -19,6 +19,7 @@ function SingleProject({
     if (project.name === myProject?.name) {
       projectRef.current?.scrollIntoView({ behavior: "smooth" });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [myProject]);
 
   const fadeInVariants = {
