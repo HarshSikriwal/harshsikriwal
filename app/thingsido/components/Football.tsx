@@ -1,75 +1,32 @@
 "use client";
+import React from "react";
+import BooksImage from "./BooksImage";
+import { motion } from "framer-motion";
+import FootballImages from "./FootballImages";
 
-import { useMemo, useState } from "react";
-import Card from "./Card";
-import Image from "next/image";
-
-let images = [
-  "/football-images/Football_1.jpg",
-  "/football-images/Football_2.jpg",
-  "/football-images/Football_3.jpg",
-  "/football-images/Football_4.jpg",
-  "/football-images/Football.jpg",
-];
-
-const Football = () => {
-  const [active, setActive] = useState(false);
-  const [selected, setSelected] = useState<string | null>(null);
-  const updateState = (name: string) =>
-    setSelected((p) => {
-      if (selected)
-        images = [selected, ...images.filter((name) => selected !== name)];
-      return name;
-    });
-  // console.log(images);
+const Books = () => {
   return (
-    <div
-      className="relative px-5 flex justify-between items-center group w-fit"
-      onMouseOver={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-    >
-      {images
-        .map((image, i, a) => ({
-          degree: 2 * (i - Math.floor(a.length / 2)),
-          name: image,
-        }))
-        .map(({ name, degree }, index) => {
-          return (
-            <Card
-              key={index}
-              name={name}
-              updateState={updateState}
-              className={`left-[807px]
-              ${
-                selected === name
-                  ? "-translate-x-[165%] h-full border-none w-[500px]"
-                  : "h-[300px]"
-              }
-              `}
-              style={
-                selected !== name
-                  ? {
-                      rotate: active ? `${2 * degree}deg` : `${degree}deg`,
-                      translate: active
-                        ? `${1 * degree}rem`
-                        : `${degree * 0.5}rem`,
-                    }
-                  : {}
-              }
-            >
-              <div>
-                <Image
-                  src={images[index]}
-                  fill
-                  alt="Football Images"
-                  objectFit="contain"
-                />
-              </div>
-            </Card>
-          );
-        })}
+    <div className="w-full h-2/3 flex relative">
+      <motion.div
+        className="bg-primary-color h-1/5 self-center w-full"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0.2 }}
+        transition={{ duration: 1 }}
+      >
+        <p className="text-black justify-center text-4xl font-bold h-full w-full flex items-center">
+          Football!
+        </p>
+      </motion.div>
+      <motion.div
+        className="absolute h-full w-full flex px-4 items-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <FootballImages className="" />
+      </motion.div>
     </div>
   );
 };
 
-export default Football;
+export default Books;
