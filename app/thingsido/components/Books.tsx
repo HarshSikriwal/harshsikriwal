@@ -1,65 +1,17 @@
-"use client";
+import React from "react";
+import BooksImage from "./BooksImage";
 
-import { useState } from "react";
-import Card from "./Card";
-import Image from "next/image";
-
-let images = ["/books/freakonomics.png", "/books/thinking_fast_and_slow.png"];
 const Books = () => {
-  const [active, setActive] = useState(false);
-  const [selected, setSelected] = useState<string | null>(null);
-  const updateState = (name: string) =>
-    setSelected((p) => {
-      if (selected)
-        images = [selected, ...images.filter((name) => selected !== name)];
-      return name;
-    });
   return (
-    <div
-      className="relative  px-8  flex justify-between items-center group w-fit"
-      onMouseOver={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-    >
-      {images
-        .map((image, i, a) => ({
-          degree: 2 * (i - Math.floor(a.length / 2)),
-          name: image,
-        }))
-        .map(({ name, degree }, index) => {
-          return (
-            <Card
-              key={degree}
-              name={name}
-              updateState={updateState}
-              className={`
-              ${
-                selected === name
-                  ? "translate-x-[140%] h-full border-none w-[500px]"
-                  : "h-[300px]"
-              }
-              `}
-              style={
-                selected !== name
-                  ? {
-                      rotate: active ? `${2 * degree}deg` : `${degree}deg`,
-                      translate: active
-                        ? `${1 * degree}rem`
-                        : `${degree * 0.5}rem`,
-                    }
-                  : {}
-              }
-            >
-              <div>
-                <Image
-                  src={images[index]}
-                  fill
-                  alt="Books"
-                  objectFit="contain"
-                />
-              </div>
-            </Card>
-          );
-        })}
+    <div className="w-full h-2/3 flex relative">
+      <div className="bg-primary-color h-1/5 self-center w-full">
+        <p className="text-black justify-center text-4xl font-bold h-full w-full flex items-center">
+          Books I have read or reading
+        </p>
+      </div>
+      <div className="absolute h-full w-full flex px-4 items-center">
+        <BooksImage className="" />
+      </div>
     </div>
   );
 };

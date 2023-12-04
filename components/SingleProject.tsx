@@ -1,9 +1,8 @@
 import { ProjectContext } from "@/context/ProjectContext";
 import { projectDetails } from "@/projectDetails";
-import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 
 function SingleProject({
   index,
