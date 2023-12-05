@@ -28,9 +28,9 @@ const BooksImage = ({ className }: { className: string }) => {
   };
 
   return (
-    <div className="flex space-x-8 w-max">
+    <div className="flex space-x-8 w-max whitespace-nowrap">
       <motion.div
-        className="space-x-8 inline-flex items-center"
+        className="space-x-8 inline-flex items-center whitespace-nowrap"
         initial={{ x: "0%" }}
         animate={{ x: "-50%" }}
         transition={{
