@@ -9,19 +9,14 @@ const Books = () => {
       <motion.div
         className="bg-primary-color h-1/5 self-center w-full"
         initial={{ opacity: 1 }}
-        animate={{ opacity: 0.2 }}
+        whileInView={{ opacity: 0.2 }}
         transition={{ duration: 1 }}
       >
         <p className="text-black justify-center text-4xl font-bold h-full w-full flex items-center">
-          Books I have read or reading
+          Readings
         </p>
       </motion.div>
-      <motion.div
-        className="absolute h-full w-full flex px-4 items-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <motion.div className="absolute h-full w-full flex px-4 items-center">
         <BooksImage className="" />
       </motion.div>
     </div>
