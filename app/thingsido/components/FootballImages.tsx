@@ -5,15 +5,15 @@ import React from "react";
 
 let images = [
   "/football-images/Football_1.jpg",
-  "/football-images/Football_2.jpg",
-  "/football-images/Football_3.jpg",
-  "/football-images/Football_4.jpg",
   "/football-images/Football.jpg",
+  "/football-images/Football_2.jpg",
+  "/football-images/Football_4.jpg",
+  "/football-images/Football_3.jpg",
   "/football-images/Football_1.jpg",
-  "/football-images/Football_2.jpg",
-  "/football-images/Football_3.jpg",
-  "/football-images/Football_4.jpg",
   "/football-images/Football.jpg",
+  "/football-images/Football_2.jpg",
+  "/football-images/Football_4.jpg",
+  "/football-images/Football_3.jpg",
 ];
 const BooksImage = ({ className }: { className: string }) => {
   const fadeVariants = {
@@ -28,10 +28,10 @@ const BooksImage = ({ className }: { className: string }) => {
   };
 
   return (
-    <div className="flex space-x-8 w-max whitespace-nowrap">
+    <div className="flex gap-8 w-max">
       <motion.div
-        className="space-x-8 inline-flex items-center whitespace-nowrap"
-        initial={{ x: "0%" }}
+        className="gap-8 inline-flex items-center"
+        // initial={{ x: "0%" }}
         animate={{ x: "-50%" }}
         transition={{
           duration: 30,
