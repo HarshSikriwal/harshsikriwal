@@ -7,12 +7,12 @@ let images = [
   "/football-images/Football_1.jpg",
   "/football-images/Football_2.jpg",
   "/football-images/Football_3.jpg",
-  "/football-images/football_4.jpg",
+  "/football-images/Football_4.jpg",
   "/football-images/Football.jpg",
   "/football-images/Football_1.jpg",
   "/football-images/Football_2.jpg",
   "/football-images/Football_3.jpg",
-  "/football-images/football_4.jpg",
+  "/football-images/Football_4.jpg",
   "/football-images/Football.jpg",
 ];
 const BooksImage = ({ className }: { className: string }) => {
@@ -44,7 +44,7 @@ const BooksImage = ({ className }: { className: string }) => {
           <motion.div key={index}>
             <Image
               src={image}
-              alt="book image"
+              alt="Image"
               width={350}
               height={200}
               objectFit="contain"
