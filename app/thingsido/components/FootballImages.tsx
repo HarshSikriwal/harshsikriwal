@@ -1,9 +1,14 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 
 let images = [
+  "/football-images/Football_1.jpg",
+  "/football-images/Football_2.jpg",
+  "/football-images/Football_3.jpg",
+  "/football-images/football_4.jpg",
+  "/football-images/Football.jpg",
   "/football-images/Football_1.jpg",
   "/football-images/Football_2.jpg",
   "/football-images/Football_3.jpg",
@@ -23,27 +28,31 @@ const BooksImage = ({ className }: { className: string }) => {
   };
 
   return (
-    <div className="flex space-x-4 w-full h-auto overflow-x-scroll custom-scrollbar items-center pb-2">
-      {images.map((image, index) => (
-        <motion.div
-          key={image}
-          className="flex-none"
-          transition={{ duration: 0.5 }}
-          variants={fadeVariants}
-          initial="initial"
-          whileInView="animate"
-          custom={index}
-          viewport={{ once: true }}
-        >
-          <Image
-            src={image}
-            alt="book image"
-            width={400}
-            height={200}
-            objectFit="contain"
-          />
-        </motion.div>
-      ))}
+    <div className="flex space-x-8 w-max">
+      <motion.div
+        className="space-x-8 inline-flex items-center"
+        initial={{ x: "0%" }}
+        animate={{ x: "-50%" }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          ease: "linear",
+          // repeatType: "mirror",
+        }}
+      >
+        {images.map((image, index) => (
+          <motion.div key={index}>
+            <Image
+              src={image}
+              alt="book image"
+              width={350}
+              height={200}
+              objectFit="contain"
+              className="rounded-xl"
+            />
+          </motion.div>
+        ))}
+      </motion.div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ const Books = () => {
         </p>
       </motion.div>
       <motion.div
-        className="absolute h-full w-full flex px-4 items-center"
+        className="absolute h-full w-full overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
