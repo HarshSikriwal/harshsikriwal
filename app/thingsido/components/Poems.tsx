@@ -20,11 +20,13 @@ const Poems = () => {
       return name;
     });
   return (
-    <div
-      className="relative px-8 flex justify-between items-center group w-fit"
-      onMouseOver={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-    >
+    <div className="relative mb-10 flex justify-between items-center group w-full">
+      <div className="bg-primary-color h-1/5 self-center w-full">
+        <p className="text-black justify-center text-4xl font-bold h-full w-full flex items-center">
+          Writings!
+        </p>
+      </div>
+
       {poems
         .map((poem, i, a) => ({
           degree: 2 * (i - Math.floor(a.length / 2)),
@@ -41,8 +43,8 @@ const Poems = () => {
               className={`
             ${
               selected === name
-                ? "translate-x-[140%] h-full border-none w-[500px]"
-                : "h-[300px]"
+                ? "translate-x-[150%] h-full border-none w-[500px]"
+                : "h-[300px] ml-8"
             }
             `}
               style={
@@ -63,6 +65,10 @@ const Poems = () => {
                 }}
               ></div>
               <div
+                onMouseOver={() => {
+                  if (selected !== name) setActive(true);
+                }}
+                onMouseLeave={() => setActive(false)}
                 className="h-full min-h-0 w-full justify-center items-center text-lg text-center font-medium my-auto rounded-md overflow-y-auto custom-scrollbar bg-black/50 leading-7 [&>p]:my-4 py-auto"
                 dangerouslySetInnerHTML={{
                   __html:

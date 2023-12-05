@@ -1,7 +1,6 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
 
 let images = [
   "/football-images/Football_1.jpg",
@@ -31,13 +30,11 @@ const BooksImage = ({ className }: { className: string }) => {
     <div className="flex gap-8 w-max">
       <motion.div
         className="gap-8 inline-flex items-center"
-        // initial={{ x: "0%" }}
         animate={{ x: "-50%" }}
         transition={{
           duration: 30,
           repeat: Infinity,
           ease: "linear",
-          // repeatType: "mirror",
         }}
       >
         {images.map((image, index) => (
