@@ -12,6 +12,7 @@ const Football = () => {
         initial={{ opacity: 1 }}
         whileInView={{ opacity: 0.2 }}
         transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 1 }}
       >
         <p className="text-black justify-center text-4xl font-bold h-full w-full flex items-center">
           Football!
@@ -21,7 +22,7 @@ const Football = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ amount: 0.7 }}
-        transition={{ duration: 1, delay: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
         className="absolute h-full w-full overflow-hidden"
       >
         <FootballImages />

@@ -11,7 +11,7 @@ const BooksImage = ({ className }: { className: string }) => {
       opacity: 1,
 
       transition: {
-        delay: 1 + 0.2 * index,
+        delay: 0.5 + 0.2 * index,
       },
     }),
   };
@@ -21,7 +21,7 @@ const BooksImage = ({ className }: { className: string }) => {
       {images.map((image, index) => (
         <motion.div
           key={image}
-          transition={{ duration: 0.5, delay: 1 }}
+          transition={{ duration: 0.5 }}
           variants={fadeVariants}
           initial="initial"
           whileInView="animate"

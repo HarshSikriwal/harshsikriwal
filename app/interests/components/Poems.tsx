@@ -26,7 +26,8 @@ const Poems = () => {
         className="bg-primary-color h-1/5 self-center w-full absolute"
         initial={{ opacity: 1 }}
         whileInView={{ opacity: 0.2 }}
-        viewport={{ amount: 0.6 }}
+        viewport={{ once: true, amount: 0.6 }}
+        transition={{ duration: 0.5 }}
       >
         <p className="text-black justify-center text-4xl font-bold h-full w-full flex items-center">
           Writings!
@@ -35,7 +36,7 @@ const Poems = () => {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
         viewport={{ amount: 0.6 }}
         className="relative flex justify-between items-center group w-full h-full"
       >

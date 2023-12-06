@@ -10,7 +10,8 @@ const Books = () => {
         className="bg-primary-color h-1/5 self-center w-full"
         initial={{ opacity: 1 }}
         whileInView={{ opacity: 0.2 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 1 }}
       >
         <p className="text-black justify-center text-4xl font-bold h-full w-full flex items-center">
           Readings
