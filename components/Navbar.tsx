@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import Header from "./Header";
+import Navigation from "./Navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -37,7 +38,8 @@ const Navbar = () => {
       <Link href="./">
         <Header className={pathname === "/" ? "hidden" : ""} />
       </Link>
-      <div className="flex flex-col md:flex-row gap-8">
+      <Navigation routes={routes} />
+      <div className="hidden md:flex gap-8">
         {routes.map((item) => (
           <Link
             key={item.label}
