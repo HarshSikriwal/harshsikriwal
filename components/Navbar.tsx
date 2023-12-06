@@ -36,7 +36,7 @@ const Navbar = () => {
       } `}
     >
       <Link href="./">
-        <Header className={pathname === "/" ? "hidden" : ""} />
+        <Header className={` ${pathname === "/" ? "hidden" : ""}`} />
       </Link>
       <Navigation routes={routes} />
       <div className="hidden md:flex gap-8">

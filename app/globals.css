@@ -12,18 +12,22 @@
   box-sizing: border-box;
 }
 
-.name-nav h1 {
-  font-size: 60px;
-  line-height: 1;
+@media screen and (min-width: 768px) {
+  .name-nav h1 {
+    font-size: 60px;
+    line-height: 1;
+  }
 }
 
-.name-main h1 {
-  font-size: 80px;
-  line-height: 0.8;
-}
+@media screen and (min-width: 768px) {
+  .name-main h1 {
+    font-size: 80px;
+    line-height: 0.8;
+  }
 
-.name-main p {
-  font-size: 24px;
+  .name-main p {
+    font-size: 24px;
+  }
 }
 
 .project-grayscale:hover {

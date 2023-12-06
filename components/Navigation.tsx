@@ -10,11 +10,11 @@ type routesType = {
 
 const Navigation = ({ routes }: { routes: routesType[] }) => {
   return (
-    <Popover className="md:hidden">
+    <Popover>
       <PopoverTrigger className="md:hidden">
         <Menu />
       </PopoverTrigger>
-      <PopoverContent className="flex flex-col w-auto mr-2 py-2">
+      <PopoverContent className="flex flex-col w-auto mr-2 py-2 bg-black">
         {routes.map((item) => (
           <Link
             key={item.label}

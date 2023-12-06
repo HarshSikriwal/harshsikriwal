@@ -6,10 +6,10 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-[75vh] flex justify-between items-center ">
-      <div className="flex flex-col gap-8">
-        <Header className="name-main" />
-        <div className="">
+    <div className="min-h-[75vh] flex gap-12 items-center flex-col md:flex-row">
+      <div className="hidden md:flex flex-col gap-8 ">
+        <Header className="name-main " />
+        <div className="hidden md:block">
           <p className="w-2/3 text-2xl font-medium text-secondary-color mb-10">
             {`I'm a passionate web developer and recent graduate who thrives on the
           fields of football and Hindi poetry. I live by the motto: 'Life is an
@@ -31,6 +31,22 @@ export default function Home() {
           alt="profile image"
           width={750}
         />
+      </div>
+      <div className="flex flex-col gap-8 mb-6 md:hidden">
+        <Header className="text-center" />
+        <div className="w-full md:hidden">
+          <p className="text-2xl font-medium text-secondary-color mb-10">
+            {`I'm a passionate web developer and recent graduate who thrives on the
+          fields of football and Hindi poetry. I live by the motto: 'Life is an
+          adventure waiting to be explored.' Also trying to be a bookworm cause
+          it sounds geeky.`}
+          </p>
+          <button className="border-2 px-4 py-2 border-secondary-color text-secondary-color rounded-lg hover:scale-105 active:scale-95 hover:border-primary-color hover:text-primary-color ">
+            <Link href={"/contact"} className="w-full">
+              Get in Touch
+            </Link>
+          </button>
+        </div>
       </div>
     </div>
   );
