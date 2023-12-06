@@ -3,7 +3,7 @@ import React from "react";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="px-32">
+    <div className="">
       {children}
       <Toaster />
     </div>

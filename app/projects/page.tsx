@@ -3,7 +3,7 @@ import ProjectNames from "@/components/ProjectNames";
 
 const Projects = () => {
   return (
-    <div className="flex justify-between py-8 px-32 grow gap-8">
+    <div className="flex justify-between py-10 grow gap-8">
       <div className="basis-2/3 relative">
         <ProjectCarousel />
       </div>

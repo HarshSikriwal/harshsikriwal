@@ -30,14 +30,14 @@ const Navbar = () => {
 
   return (
     <div
-      className={`flex mb-10 px-32 py-4 ${
+      className={`flex mb-10 my-4 ${
         pathname === "/" ? "justify-end" : "justify-between"
       } `}
     >
       <Link href="./">
         <Header className={pathname === "/" ? "hidden" : ""} />
       </Link>
-      <div className="flex gap-8">
+      <div className="flex flex-col md:flex-row gap-8">
         {routes.map((item) => (
           <Link
             key={item.label}
