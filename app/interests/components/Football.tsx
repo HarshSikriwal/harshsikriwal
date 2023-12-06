@@ -21,7 +21,7 @@ const Football = () => {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ amount: 0.7 }}
+        viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         className="absolute h-full w-full overflow-hidden"
       >

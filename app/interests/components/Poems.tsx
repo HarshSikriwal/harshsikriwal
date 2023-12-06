@@ -37,7 +37,7 @@ const Poems = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        viewport={{ amount: 0.6 }}
+        viewport={{ once: true, amount: 0.6 }}
         className="relative flex justify-between items-center group w-full h-full"
       >
         {poems

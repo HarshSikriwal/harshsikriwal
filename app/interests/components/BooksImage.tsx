@@ -26,7 +26,7 @@ const BooksImage = ({ className }: { className: string }) => {
           initial="initial"
           whileInView="animate"
           custom={index}
-          viewport={{ amount: 0.6 }}
+          viewport={{ once: true, amount: 0.6 }}
         >
           <Image src={image} height={300} width={200} alt="book image" />
         </motion.div>
