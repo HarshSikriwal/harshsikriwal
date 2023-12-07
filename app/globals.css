@@ -20,13 +20,21 @@
   font-size: 13px;
 }
 
+.name-nav h1 {
+  font-size: 30px;
+  line-height: 0.9;
+}
+.name-nav p {
+  font-size: 13px;
+}
+
 @media screen and (min-width: 768px) {
   .name-nav h1 {
     font-size: 60px;
-    line-height: 0.7;
+    line-height: 0.8;
   }
   .name-nav p {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 
