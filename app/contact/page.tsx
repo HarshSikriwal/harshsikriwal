@@ -39,7 +39,7 @@ const contact = () => {
       <MailError />
       <div className="h-full w-full flex flex-col md:flex-row justify-between gap-6">
         <div className="h-full w-full flex flex-col text-2xl md:basis-5/12 text-secondary-color gap-4 md:pt-32">
-          <h4 className=" text-xl md:text-4xl md:text-left text-primary-color font-bold text-center">{`Let's Connect`}</h4>
+          <h4 className=" text-2xl md:text-4xl md:text-left text-primary-color font-bold text-center">{`Let's Connect`}</h4>
           <p className="max-md:text-sm max-md:text-center">
             Hey there, Thanks for reaching out to me. I am all open to hearing
             about any new opportunities or anything you want to say.
