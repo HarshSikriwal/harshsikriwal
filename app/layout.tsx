@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${myFont.className} flex flex-col min-h-screen max-w-screen overflow-x-hidden text-primary-color mx-4 md:mx-32 bg-[#020207] custom-scrollbar`}
+        className={`${myFont.className} flex flex-col min-h-screen text-primary-color pb-4 px-4 md:mx-32 bg-[#020207] custom-scrollbar`}
       >
         <Navbar />
         <ProjectsProvider>{children}</ProjectsProvider>

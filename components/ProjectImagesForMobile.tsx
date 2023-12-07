@@ -88,11 +88,12 @@ const ProjectImagesForMobile = ({ images }: { images: string[] }) => {
         initial={left ? "enterLeft" : "enterRight"}
         animate={{ opacity: 1, x: "0" }}
         exit={left ? "exitRight" : "exitLeft"}
-        transition={{ duration: 0.5, type: "spring", bounce: 0 }}
+        transition={{ duration: 0.5 }}
         variants={directionVariants}
       >
         <Image
           src={images[currentIndex]}
+          className=""
           alt="image"
           width={350}
           height={200}
