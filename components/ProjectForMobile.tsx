@@ -10,7 +10,7 @@ const ProjectForMobile = () => {
       {projectDetails.map((project, index) => (
         <div
           key={project.name}
-          className="w-full relative py-6 overflow-hidden"
+          className="w-full relative py-6 overflow-hidden rounded-lg shadow-2xl"
         >
           <div
             className={`absolute w-full h-full  -z-20 blur-2xl opacity-20`}
