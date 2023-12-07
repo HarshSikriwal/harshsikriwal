@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-[75vh] flex gap-12 items-center flex-col md:flex-row">
+    <div className="min-h-[75vh] flex gap-16 items-center flex-col md:flex-row">
       <div className="hidden md:flex flex-col gap-8 ">
         <Header className="name-main " />
         <div className="hidden md:block">
