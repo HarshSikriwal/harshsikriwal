@@ -37,7 +37,7 @@ const contact = () => {
   return (
     <>
       <MailError />
-      <div className="h-full w-full flex flex-col md:flex-row justify-between gap-6">
+      <div className="h-full w-full flex flex-col md:flex-row md:justify-between gap-6 ">
         <div className="h-full w-full flex flex-col text-2xl md:basis-5/12 text-secondary-color gap-4 md:pt-32">
           <h4 className=" text-2xl md:text-4xl md:text-left text-primary-color font-bold text-center">{`Let's Connect`}</h4>
           <p className="max-md:text-sm max-md:text-center">
@@ -47,7 +47,7 @@ const contact = () => {
         </div>
         <form
           className="flex flex-col gap-8 h-full md:basis-7/12 border-2 
-        rounded-md py-2 px-3 border-secondary-color"
+        rounded-md py-2 px-3 border-secondary-color  overflow-y-scroll"
           action={sendMail}
           id="formdata"
         >
