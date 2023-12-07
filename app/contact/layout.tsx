@@ -3,7 +3,7 @@ import React from "react";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="">
+    <div className="max-w-screen">
       {children}
       <Toaster />
     </div>

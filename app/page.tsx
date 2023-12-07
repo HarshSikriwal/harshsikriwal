@@ -30,6 +30,7 @@ export default function Home() {
           src={MyPhoto}
           alt="profile image"
           width={750}
+          sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
       <div className="flex flex-col gap-8 mb-6 md:hidden">
