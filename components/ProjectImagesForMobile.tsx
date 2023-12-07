@@ -1,5 +1,6 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
+import { Circle } from "lucide-react";
 import Image from "next/image";
 import React, { useRef, useState, useTransition } from "react";
 
@@ -46,9 +47,9 @@ const ProjectImagesForMobile = ({ images }: { images: string[] }) => {
     const touchEndX = e.touches[0].clientX;
     const diff = touchStartX - touchEndX;
 
-    if (diff > 5) {
+    if (diff > 8) {
       handleLeft();
-    } else if (diff < -5) {
+    } else if (diff < -8) {
       handleRight();
     }
 
@@ -78,7 +79,7 @@ const ProjectImagesForMobile = ({ images }: { images: string[] }) => {
       <motion.div
         key={currentIndex}
         ref={sliderRef}
-        className="relative overflow-hidden"
+        className="relative overflow-hidden w-full h-[400px]"
         onTouchStart={(e) =>
           handleTouchStart(e as React.TouchEvent<HTMLDivElement>)
         }
@@ -95,13 +96,22 @@ const ProjectImagesForMobile = ({ images }: { images: string[] }) => {
           src={images[currentIndex]}
           className=""
           alt="image"
-          width={350}
-          height={200}
+          fill
           style={{ objectFit: "contain" }}
           priority={true}
           loading="eager"
         />
       </motion.div>
+      <div className="flex justify-center my-2">
+        {images?.map((_, i) => (
+          <Circle
+            className={`h-3 transition-all duration-500  ${
+              i === currentIndex ? "fill-white scale-[1.3]" : ""
+            }`}
+            key={i}
+          />
+        ))}
+      </div>
     </AnimatePresence>
   );
 };
