@@ -18,7 +18,7 @@ const ProjectImagesForMobile = ({ images }: { images: string[] }) => {
       if (images.length === 0) {
         setCurrentIndex(0);
       } else {
-        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+        setCurrentIndex((prev) => (prev + 1) % images?.length);
       }
     });
   };
@@ -28,7 +28,7 @@ const ProjectImagesForMobile = ({ images }: { images: string[] }) => {
       if (images.length === 0) {
         setCurrentIndex(0);
       } else {
-        setCurrentIndex((prev) => (prev + 1) % images?.length);
+        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
       }
     });
 
