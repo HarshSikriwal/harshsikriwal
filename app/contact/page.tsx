@@ -95,8 +95,8 @@ const contact = () => {
             type="submit"
             className="flex gap-2
           items-center
-          self-start border-2 px-4 py-1
-          text-xl 
+          self-start border-2 px-2 py-1 md:px-4 md:py-1
+          md:text-xl 
           text-secondary-color 
           border-secondary-color 
           rounded-lg 
@@ -106,7 +106,7 @@ const contact = () => {
           hover:text-primary-color"
           >
             <p>Send</p>
-            <Send className="h-5" />
+            <Send className="md:h-5 h-4" />
           </button>
         </form>
       </div>

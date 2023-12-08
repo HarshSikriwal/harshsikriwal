@@ -29,7 +29,7 @@ export function Toaster() {
           </Toast>
         );
       })}
-      <ToastViewport className="" />
+      <ToastViewport className="max-md:p-2" />
     </ToastProvider>
   );
 }
