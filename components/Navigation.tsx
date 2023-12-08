@@ -14,7 +14,7 @@ const Navigation = ({ routes }: { routes: routesType[] }) => {
       <PopoverTrigger className="self-start md:hidden">
         <Menu />
       </PopoverTrigger>
-      <PopoverContent className="flex flex-col w-auto mr-2 py-2 bg-black">
+      <PopoverContent className="flex flex-col w-auto mt-1 mr-2 py-2 bg-black">
         {routes.map((item) => (
           <Link
             key={item.label}
