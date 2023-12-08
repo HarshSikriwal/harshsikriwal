@@ -47,7 +47,7 @@ const contact = () => {
         </div>
         <form
           className="flex flex-col gap-8 h-full md:basis-7/12 border-2 
-        rounded-md py-2 px-3 border-secondary-color  overflow-y-scroll"
+        rounded-md py-2 px-3 border-secondary-color  "
           action={sendMail}
           id="formdata"
         >
