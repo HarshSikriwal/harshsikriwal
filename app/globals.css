@@ -84,3 +84,7 @@
   left: calc(50% - 300px);
   top: calc(50% - 180px);
 }
+
+.translatePoem {
+  transform: translateX(calc(200%)); /* Calculates based on parent width */
+}

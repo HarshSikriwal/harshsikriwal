@@ -55,10 +55,10 @@ const Poems = () => {
                 key={degree}
                 name={name}
                 updateState={updateState}
-                className={`
+                className={` 
             ${
               selected === name
-                ? "translate-x-[150%] h-full border-none w-[500px]"
+                ? "md:translate-x-[150%] min-[1800px]:translate-x-[222%] lg h-full border-none w-[500px]"
                 : "h-[300px] ml-8"
             }
             `}
