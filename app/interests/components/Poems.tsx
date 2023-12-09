@@ -23,7 +23,7 @@ const Poems = () => {
     });
 
   return (
-    <div className="relative w-full h-full flex flex-col md:flex-row items-center mb-10">
+    <div className="relative w-full h-full flex flex-col gap-12 md:flex-row items-center mb-10">
       <motion.div
         className="bg-primary-color h-1/5 self-center w-full md:absolute"
         initial={{ opacity: 1 }}
@@ -101,8 +101,8 @@ const Poems = () => {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        viewport={{ once: true, amount: 0.6 }}
+        transition={{ delay: 0.5, duration: 0.2 }}
+        viewport={{ once: true, amount: 0.3 }}
         className="relative py-6 overflow-hidden rounded-lg shadow-2xl md:hidden justify-between items-center group w-full h-full"
       >
         <PoemsForMobile />
