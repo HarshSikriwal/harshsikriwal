@@ -16,9 +16,9 @@ let images = [
 ];
 const BooksImage = () => {
   return (
-    <div className="flex gap-8 w-max z-10">
+    <div className="flex h-full md:gap-8 w-max z-10">
       <motion.div
-        className="gap-8 inline-flex items-center"
+        className="md:gap-8 gap-4 inline-flex items-center"
         animate={{ x: "-50%" }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
       >

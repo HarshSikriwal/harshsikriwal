@@ -38,7 +38,7 @@ const Poems = () => {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
         viewport={{ once: true, amount: 0.6 }}
-        className="relative flex justify-between items-center group w-full h-full"
+        className="relative hidden md:flex justify-between items-center group w-full h-full"
       >
         {poems
           .map((poem, i, a) => ({
