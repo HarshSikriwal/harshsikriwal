@@ -9,7 +9,7 @@ const Books = () => {
       <motion.div
         className="bg-primary-color h-1/5 self-center w-full"
         initial={{ opacity: 1 }}
-        whileInView={{ opacity: 0.2 }}
+        whileInView={{ opacity: 0.4 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true, amount: 1 }}
       >

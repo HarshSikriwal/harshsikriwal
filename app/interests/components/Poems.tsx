@@ -27,7 +27,7 @@ const Poems = () => {
       <motion.div
         className="bg-primary-color h-1/5 self-center w-full md:absolute"
         initial={{ opacity: 1 }}
-        whileInView={{ opacity: 0.2 }}
+        whileInView={{ opacity: 0.4 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.5 }}
       >
