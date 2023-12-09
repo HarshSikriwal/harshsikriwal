@@ -37,16 +37,16 @@ const contact = () => {
   return (
     <>
       <MailError />
-      <div className="h-full w-full flex flex-col md:flex-row md:justify-between gap-6 ">
-        <div className="h-full w-full flex flex-col text-2xl md:basis-5/12 text-secondary-color gap-4 md:pt-32">
-          <h4 className=" text-2xl md:text-4xl md:text-left text-primary-color font-bold text-center">{`Let's Connect`}</h4>
-          <p className="max-md:text-sm max-md:text-center">
+      <div className="h-full w-full flex flex-col lg:flex-row lg:justify-between gap-6 ">
+        <div className="h-full w-full flex flex-col text-2xl lg:basis-5/12 text-secondary-color gap-4 lg:pt-32">
+          <h4 className=" text-2xl lg:text-4xl lg:text-left text-primary-color font-bold text-center">{`Let's Connect`}</h4>
+          <p className="max-lg:text-sm max-lg:text-center">
             Hey there, Thanks for reaching out to me. I am all open to hearing
             about any new opportunities or anything you want to say.
           </p>
         </div>
         <form
-          className="flex flex-col gap-8 h-full md:basis-7/12 border-2 
+          className="flex flex-col gap-8 h-full lg:basis-7/12 border-2 
         rounded-md py-2 px-3 border-secondary-color  "
           action={sendMail}
           id="formdata"
@@ -95,8 +95,8 @@ const contact = () => {
             type="submit"
             className="flex gap-2
           items-center
-          self-start border-2 px-2 py-1 md:px-4 md:py-1
-          md:text-xl 
+          self-start border-2 px-2 py-1 lg:px-4 lg:py-1
+          lg:text-xl 
           text-secondary-color 
           border-secondary-color 
           rounded-lg 
@@ -106,7 +106,7 @@ const contact = () => {
           hover:text-primary-color"
           >
             <p>Send</p>
-            <Send className="md:h-5 h-4" />
+            <Send className="lg:h-5 h-4" />
           </button>
         </form>
       </div>

@@ -23,15 +23,15 @@ const Poems = () => {
     });
 
   return (
-    <div className="relative w-full h-full flex flex-col gap-12 md:flex-row items-center mb-10">
+    <div className="relative w-full h-full flex flex-col gap-12 lg:flex-row items-center mb-10">
       <motion.div
-        className="bg-primary-color h-1/5 self-center w-full md:absolute"
+        className="bg-primary-color h-1/5 self-center w-full lg:absolute"
         initial={{ opacity: 1 }}
         whileInView={{ opacity: 0.4 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.5 }}
       >
-        <p className="text-black justify-center text-3xl py-1 md:text-4xl font-bold h-full w-full flex items-center">
+        <p className="text-black justify-center text-3xl py-1 lg:text-4xl font-bold h-full w-full flex items-center">
           Writings
         </p>
       </motion.div>
@@ -40,7 +40,7 @@ const Poems = () => {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
         viewport={{ once: true, amount: 0.6 }}
-        className="relative hidden md:flex justify-between items-center group w-full h-full"
+        className="relative hidden lg:flex justify-between items-center group w-full h-full"
       >
         {poems
           .map((poem, i, a) => ({
@@ -58,7 +58,7 @@ const Poems = () => {
                 className={` 
             ${
               selected === name
-                ? "md:translate-x-[150%] min-[1800px]:translate-x-[222%] lg h-full border-none w-[500px]"
+                ? "lg:translate-x-[150%] min-[1800px]:translate-x-[222%] lg h-full border-none w-[500px]"
                 : "h-[300px] ml-8"
             }
             `}
@@ -103,7 +103,7 @@ const Poems = () => {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.2 }}
         viewport={{ once: true, amount: 0.3 }}
-        className="relative py-6 overflow-hidden rounded-lg shadow-2xl md:hidden justify-between items-center group w-full h-full"
+        className="relative py-6 overflow-hidden rounded-lg shadow-2xl lg:hidden justify-between items-center group w-full h-full"
       >
         <PoemsForMobile />
       </motion.div>

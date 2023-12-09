@@ -38,7 +38,7 @@ const Navbar = () => {
       <Link href="./">
         <Header className={`name-nav ${pathname === "/" ? "hidden" : ""}`} />
       </Link>
-      <div className="md:hidden gap-2 flex">
+      <div className="lg:hidden gap-2 flex">
         <Link
           href={"/contact"}
           className={`w-full ${pathname === "/contact" ? "hidden" : ""}`}
@@ -52,7 +52,7 @@ const Navbar = () => {
         </Link>
         <Navigation routes={routes} />
       </div>
-      <div className="hidden md:flex gap-8">
+      <div className="hidden lg:flex gap-8">
         {routes.map((item) => (
           <Link
             key={item.label}

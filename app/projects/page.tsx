@@ -5,10 +5,10 @@ import ProjectNames from "@/components/ProjectNames";
 const Projects = () => {
   return (
     <>
-      <div className="w-full overflow-x-hidden md:hidden">
+      <div className="w-full overflow-x-hidden lg:hidden">
         <ProjectForMobile />
       </div>
-      <div className="hidden md:flex justify-between py-10 grow gap-8">
+      <div className="hidden lg:flex justify-between py-10 grow gap-8">
         <div className="basis-2/3 relative">
           <ProjectCarousel />
         </div>

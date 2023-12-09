@@ -6,10 +6,10 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-[75vh] flex gap-16 items-center flex-col md:flex-row">
-      <div className="hidden md:flex flex-col gap-8 ">
+    <div className="min-h-[75vh] flex gap-16 items-center flex-col lg:flex-row">
+      <div className="hidden lg:flex flex-col gap-8 ">
         <Header className="name-main " />
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <p className="w-2/3 text-2xl font-medium text-secondary-color mb-10">
             {`I'm a passionate web developer and recent graduate who thrives on the
           fields of football and Hindi poetry. I live by the motto: 'Life is an
@@ -26,16 +26,16 @@ export default function Home() {
       <div className="w-fit h-fit flex justify-center items-center relative">
         <div className="absolute bg-[#617656] w-4/5 h-4/5 top-12 -z-20 blur-3xl rounded-full"></div>
         <Image
-          className="rounded-full max-md:p-4"
+          className="rounded-full max-lg:p-4"
           src={MyPhoto}
           alt="profile image"
           width={750}
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
-      <div className="flex flex-col gap-6 mb-6 md:hidden">
+      <div className="flex flex-col gap-6 mb-6 lg:hidden">
         <Header className="text-center" />
-        <div className="w-full flex flex-col md:hidden">
+        <div className="w-full flex flex-col lg:hidden">
           <p className="text-2xl font-medium text-secondary-color mb-8">
             {`I'm a passionate web developer and recent graduate who thrives on the
           fields of football and Hindi poetry. I live by the motto: 'Life is an

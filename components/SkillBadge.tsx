@@ -24,7 +24,7 @@ export function SkillBadge({ skills }: { skills: string | undefined }) {
   };
 
   return (
-    <div className="md:w-2/3 flex flex-wrap gap-2 ">
+    <div className="lg:w-2/3 flex flex-wrap gap-2 ">
       {skills?.split(", ").map((skill) => (
         <Badge
           key={skill}

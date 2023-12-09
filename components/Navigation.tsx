@@ -11,7 +11,7 @@ type routesType = {
 const Navigation = ({ routes }: { routes: routesType[] }) => {
   return (
     <Popover>
-      <PopoverTrigger className="self-start md:hidden">
+      <PopoverTrigger className="self-start lg:hidden">
         <Menu />
       </PopoverTrigger>
       <PopoverContent className="flex flex-col w-auto mt-1 mr-2 py-2 bg-black">

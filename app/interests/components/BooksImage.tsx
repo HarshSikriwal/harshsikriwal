@@ -17,7 +17,7 @@ const BooksImage = ({ className }: { className: string }) => {
   };
 
   return (
-    <div className="flex gap-4 md:gap-10">
+    <div className="flex gap-4 lg:gap-10">
       {images.map((image, index) => (
         <motion.div
           key={image}
