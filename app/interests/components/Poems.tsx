@@ -5,6 +5,7 @@ import Card from "./Card";
 import Image from "next/image";
 import { poemDetails } from "@/poemDetails";
 import { motion } from "framer-motion";
+import PoemsForMobile from "./PoemsForMobile";
 
 let poems = poemDetails;
 
@@ -20,17 +21,18 @@ const Poems = () => {
         ];
       return name;
     });
+
   return (
-    <div className="relative w-full h-full flex items-center mb-10">
+    <div className="relative w-full h-full flex flex-col md:flex-row items-center mb-10">
       <motion.div
-        className="bg-primary-color h-1/5 self-center w-full absolute"
+        className="bg-primary-color h-1/5 self-center w-full md:absolute"
         initial={{ opacity: 1 }}
         whileInView={{ opacity: 0.2 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.5 }}
       >
-        <p className="text-black justify-center text-4xl font-bold h-full w-full flex items-center">
-          Writings!
+        <p className="text-black justify-center text-3xl py-1 md:text-4xl font-bold h-full w-full flex items-center">
+          Writings
         </p>
       </motion.div>
       <motion.div
@@ -82,17 +84,28 @@ const Poems = () => {
                     if (selected !== name) setActive(true);
                   }}
                   onMouseLeave={() => setActive(false)}
-                  className="h-full min-h-0 w-full justify-center items-center text-lg text-center font-medium my-auto rounded-md overflow-y-auto custom-scrollbar bg-black/50 leading-7 [&>p]:my-4 py-auto"
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      selected === name
-                        ? content
-                        : `<div class='flex justify-center text-3xl items-center w-full h-full'>${name}</div>`,
-                  }}
-                ></div>
+                  className="h-full min-h-0 w-full justify-center items-center text-lg text-center font-medium my-auto rounded-md overflow-y-auto custom-scrollbar bg-black/50 leading-7 [&>div>p]:my-4 py-auto"
+                >
+                  {selected === name ? (
+                    content
+                  ) : (
+                    <div className="flex justify-center text-3xl items-center w-full h-full">
+                      {name}
+                    </div>
+                  )}
+                </div>
               </Card>
             );
           })}
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+        viewport={{ once: true, amount: 0.6 }}
+        className="relative py-6 overflow-hidden rounded-lg shadow-2xl md:hidden justify-between items-center group w-full h-full"
+      >
+        <PoemsForMobile />
       </motion.div>
     </div>
   );
