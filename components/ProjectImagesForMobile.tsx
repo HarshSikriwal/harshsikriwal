@@ -47,9 +47,9 @@ const ProjectImagesForMobile = ({ images }: { images: string[] }) => {
     const touchEndX = e.touches[0].clientX;
     const diff = touchStartX - touchEndX;
 
-    if (diff > 8) {
+    if (diff > 6) {
       handleLeft();
-    } else if (diff < -8) {
+    } else if (diff < -6) {
       handleRight();
     }
 

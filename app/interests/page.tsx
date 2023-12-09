@@ -5,7 +5,7 @@ import Books from "./components/Books";
 
 const info = () => {
   return (
-    <div className="flex flex-col  gap-36 [&>*]:h-[400px]  ">
+    <div className="flex flex-col  gap-36 [&>*]:h-[400px]  overflow-y-scroll">
       <Books />
       <Football />
       <Poems />

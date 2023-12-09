@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Books = () => {
   return (
-    <div className="w-full h-2/3 flex relative">
+    <div className="w-full h-2/3 flex flex-col md:flex-row relative max-md:mt-16">
       <motion.div
         className="bg-primary-color h-1/5 self-center w-full"
         initial={{ opacity: 1 }}
@@ -17,7 +17,7 @@ const Books = () => {
           Readings
         </p>
       </motion.div>
-      <motion.div className="absolute h-full w-full flex px-4 items-center">
+      <motion.div className="md:absolute h-full w-full flex px-4 items-center">
         <BooksImage className="" />
       </motion.div>
     </div>
