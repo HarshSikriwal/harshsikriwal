@@ -12,8 +12,8 @@ export default function Home() {
         <div className="hidden lg:block">
           <p className="w-2/3 text-2xl font-medium text-secondary-color mb-10">
             {`I'm a passionate web developer and recent graduate who thrives on the
-          fields of football and Hindi poetry. I live by the motto: 'Life is an
-          adventure waiting to be explored.' Also trying to be a bookworm cause
+          fields of football and Hindi poetry. I live by the motto: "Life is an
+          adventure waiting to be explored." Also trying to be a bookworm cause
           it sounds geeky.`}
           </p>
           <Link href={"/contact"} className="w-full">
