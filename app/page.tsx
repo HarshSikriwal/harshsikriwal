@@ -26,11 +26,10 @@ export default function Home() {
       <div className="w-fit h-fit flex justify-center items-center relative">
         <div className="absolute bg-[#617656] w-4/5 h-4/5 top-12 -z-20 blur-3xl rounded-full"></div>
         <Image
-          className="rounded-full max-lg:p-4"
+          className="rounded-full p-4 md:p-32 lg:p-0"
           src={MyPhoto}
           alt="profile image"
           width={750}
-          sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
       <div className="flex flex-col gap-6 mb-6 lg:hidden">
