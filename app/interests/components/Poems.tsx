@@ -31,15 +31,15 @@ const Poems = () => {
   };
 
   return (
-    <div className="relative w-full h-full flex flex-col gap-12 lg:flex-row items-center mb-10">
+    <div className="relative w-full h-full flex flex-col gap-12 min-[1280px]:flex-row items-center mb-10">
       <motion.div
-        className="bg-primary-color h-1/5 self-center w-full lg:absolute"
+        className="bg-primary-color h-1/5 self-center w-full min-[1280px]:absolute"
         initial={{ opacity: 1 }}
         whileInView={{ opacity: 0.4 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.5 }}
       >
-        <p className="text-black justify-center text-3xl py-1 lg:text-4xl font-bold h-full w-full flex items-center">
+        <p className="text-black justify-center text-3xl py-1 min-[1280px]:text-4xl font-bold h-full w-full flex items-center">
           Writings
         </p>
       </motion.div>
