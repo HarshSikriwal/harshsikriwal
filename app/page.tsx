@@ -35,7 +35,7 @@ export default function Home() {
       <div className="flex flex-col gap-6 mb-6 lg:hidden">
         <Header className="text-center" />
         <div className="w-full flex flex-col lg:hidden">
-          <p className="text-xl font-medium text-secondary-color mx-1 mb-8">
+          <p className="text-xl font-semibold text-secondary-color mx-1 mb-8">
             {`I'm a passionate web developer and recent graduate who thrives on the
           fields of football and Hindi poetry. I live by the motto: "Life is an
           adventure waiting to be explored." Also trying to be a bookworm cause

@@ -40,7 +40,7 @@ const contact = () => {
       <div className="h-full w-full flex flex-col lg:flex-row lg:justify-between gap-6 ">
         <div className="h-full w-full flex flex-col text-2xl lg:basis-5/12 text-secondary-color gap-4 lg:pt-32">
           <h4 className=" text-2xl lg:text-4xl lg:text-left text-primary-color font-bold text-center">{`Let's Connect`}</h4>
-          <p className="max-lg:text-sm max-lg:text-center">
+          <p className="max-md:text-[17px] max-md:leading-5 max-lg:text-center">
             Hey there, Thanks for reaching out to me. I am all open to hearing
             about any new opportunities or anything you want to say.
           </p>
