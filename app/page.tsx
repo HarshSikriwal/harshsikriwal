@@ -37,10 +37,11 @@ export default function Home() {
         <div className="w-full flex flex-col lg:hidden">
           <p className="text-2xl font-medium text-secondary-color mb-8">
             {`I'm a passionate web developer and recent graduate who thrives on the
-          fields of football and Hindi poetry. I live by the motto: 'Life is an
-          adventure waiting to be explored.' Also trying to be a bookworm cause
+          fields of football and Hindi poetry. I live by the motto: "Life is an
+          adventure waiting to be explored." Also trying to be a bookworm cause
           it sounds geeky.`}
           </p>
+
           <Link href={"/contact"} className="w-full">
             <button className="border-2 px-2 py-1 border-secondary-color bg-white text-black rounded-xl font-bold hover:scale-105 active:scale-95 hover:border-primary-color hover:text-primary-color ">
               Get in Touch
