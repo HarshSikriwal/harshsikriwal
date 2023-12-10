@@ -12,6 +12,7 @@ let poems = poemDetails;
 const Poems = () => {
   const [active, setActive] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
+
   const updateState = (name: string) =>
     setSelected((p) => {
       if (selected)
@@ -21,6 +22,13 @@ const Poems = () => {
         ];
       return name;
     });
+
+  const getTranslationValue = () => {
+    const screenWidth = window.innerWidth;
+
+    const translationValue = screenWidth - 780; // Subtracting 20px from screen width
+    return `translateX(${translationValue}px)`;
+  };
 
   return (
     <div className="relative w-full h-full flex flex-col gap-12 lg:flex-row items-center mb-10">
@@ -40,7 +48,7 @@ const Poems = () => {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
         viewport={{ once: true, amount: 0.6 }}
-        className="relative hidden lg:flex justify-between items-center group w-full h-full"
+        className="relative hidden min-[1280px]:flex justify-between items-center group w-full h-full"
       >
         {poems
           .map((poem, i, a) => ({
@@ -58,7 +66,7 @@ const Poems = () => {
                 className={` 
             ${
               selected === name
-                ? "lg:translate-x-[150%] min-[1800px]:translate-x-[222%] lg h-full border-none w-[500px]"
+                ? " lg h-full border-none w-[500px]"
                 : "h-[300px] ml-8"
             }
             `}
@@ -70,7 +78,7 @@ const Poems = () => {
                           ? `${1 * degree}rem`
                           : `${degree * 0.5}rem`,
                       }
-                    : {}
+                    : { transform: getTranslationValue() }
                 }
               >
                 <div
@@ -103,7 +111,7 @@ const Poems = () => {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.2 }}
         viewport={{ once: true, amount: 0.3 }}
-        className="relative py-6 overflow-hidden rounded-lg shadow-2xl lg:hidden justify-between items-center group w-full h-full"
+        className="relative py-6 overflow-hidden rounded-lg shadow-2xl block min-[1300px]:hidden justify-between items-center w-full h-full"
       >
         <PoemsForMobile />
       </motion.div>
