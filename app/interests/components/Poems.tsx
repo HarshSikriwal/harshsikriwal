@@ -66,7 +66,7 @@ const Poems = () => {
                 className={` 
             ${
               selected === name
-                ? " lg h-full border-none w-[500px]"
+                ? "  h-full border-none w-[500px]"
                 : "h-[300px] ml-8"
             }
             `}
@@ -92,7 +92,7 @@ const Poems = () => {
                     if (selected !== name) setActive(true);
                   }}
                   onMouseLeave={() => setActive(false)}
-                  className="h-full min-h-0 w-full justify-center items-center text-lg text-center font-medium my-auto rounded-md overflow-y-auto custom-scrollbar bg-black/50 leading-7 [&>div>p]:my-4 py-auto"
+                  className="h-full min-h-0 w-full justify-center items-center text-md font-semibold text-center text-white/70 my-auto rounded-md overflow-y-auto custom-scrollbar bg-black/50 leading-8 [&>div>p]:my-4 py-auto"
                 >
                   {selected === name ? (
                     content
