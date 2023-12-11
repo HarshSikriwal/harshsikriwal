@@ -43,7 +43,7 @@ function SingleProject({
       whileInView="animate"
       viewport={{ once: true }}
       custom={index}
-      className={` cursor-pointer flex items-center justify-end gap-4 w-full h-full  relative ${
+      className={` cursor-pointer flex items-center justify-end gap-4 w-full h-full hover:text-primary-color relative ${
         project.name === myProject?.name
           ? "text-primary-color"
           : "text-secondary-color "
