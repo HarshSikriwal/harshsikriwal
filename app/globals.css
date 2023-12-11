@@ -84,3 +84,13 @@
   left: calc(50% - 300px);
   top: calc(50% - 180px);
 }
+
+.cvicon {
+  fill: var(--secondary-color); /* Change this to your desired default color */
+  transition: fill 0.3s ease; /* Smooth transition on color change */
+}
+
+/* Color on hover */
+.cvicon:hover {
+  fill: var(--primary-color); /* Change this to your desired hover color */
+}

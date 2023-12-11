@@ -3,6 +3,7 @@ import Image from "next/image";
 import RoundImage from "../public/Ellipse1.png";
 import MyPhoto from "../public/myphoto.png";
 import Link from "next/link";
+import SocialHandles from "@/components/SocialHandles";
 
 export default function Home() {
   return (
@@ -25,12 +26,15 @@ export default function Home() {
       </div>
       <div className="w-fit h-fit flex justify-center items-center relative">
         <div className="absolute bg-[#617656] w-4/5 h-4/5 top-12 -z-20 blur-3xl rounded-full"></div>
-        <Image
-          className="rounded-full p-4 md:p-32 lg:p-0"
-          src={MyPhoto}
-          alt="profile image"
-          width={750}
-        />
+        <div>
+          <Image
+            className="rounded-full p-4 md:p-32 lg:p-0"
+            src={MyPhoto}
+            alt="profile image"
+            width={750}
+          />
+          <SocialHandles />
+        </div>
       </div>
       <div className="flex flex-col gap-6 mb-6 lg:hidden">
         <Header className="text-center" />
