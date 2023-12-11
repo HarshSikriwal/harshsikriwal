@@ -7,7 +7,7 @@ import SocialHandles from "@/components/SocialHandles";
 
 export default function Home() {
   return (
-    <div className="min-h-[75vh] flex gap-16 items-center flex-col lg:flex-row">
+    <div className="min-h-[75vh] flex gap-16 items-center flex-col max-lg:px-2 lg:flex-row">
       <div className="hidden lg:flex flex-col gap-8 ">
         <Header className="name-main " />
         <div className="hidden lg:block">

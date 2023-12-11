@@ -102,7 +102,9 @@ const PoemsForMobile = () => {
         ></div>
         <div className="h-full w-full justify-center items-center text-md text-center font-medium rounded-md overflow-y-auto custom-scrollbar bg-black/50 leading-7">
           <p className="text-4xl m-4 ">{poems[currentIndex].title}</p>
-          <div className="[&>div>p]:my-4 ">{poems[currentIndex].content}</div>
+          <div className="mx-2 [&>div>p]:my-4 ">
+            {poems[currentIndex].content}
+          </div>
         </div>
       </motion.div>
       <div className="flex justify-center my-4">

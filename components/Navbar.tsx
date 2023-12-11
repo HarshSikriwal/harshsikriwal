@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`flex mb-10 my-4 ${
+      className={`flex mb-10 my-2 ${
         pathname === "/" ? "justify-end" : "justify-between"
       } `}
     >

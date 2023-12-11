@@ -5,7 +5,7 @@ import ProjectNames from "@/components/ProjectNames";
 const Projects = () => {
   return (
     <>
-      <div className="w-full overflow-x-hidden lg:hidden">
+      <div className="w-full overflow-x-hidden max-lg:px-2 lg:hidden">
         <ProjectForMobile />
       </div>
       <div className="hidden lg:flex justify-between py-10 grow gap-8">

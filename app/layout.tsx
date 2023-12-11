@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 // const mainFont = Titillium_Web({
 //   subsets: ["latin"],
@@ -47,10 +48,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${myFont.className} flex flex-col min-h-screen max-lg:w-screen text-primary-color pb-4 px-2 lg:mx-32 bg-[#020207] custom-scrollbar`}
+        className={`${myFont.className} flex flex-col min-h-screen max-lg:w-screen text-primary-color lg:mx-32 bg-[#020207] custom-scrollbar`}
       >
         <Navbar />
         <ProjectsProvider>{children}</ProjectsProvider>
+        <Footer />
         <Analytics />
       </body>
     </html>
