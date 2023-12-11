@@ -3,7 +3,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import Header from "./Header";
-import Navigation from "./Navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
