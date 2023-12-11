@@ -20,6 +20,9 @@ module.exports = {
         "primary-color": "var(--primary-color)",
         "secondary-color": "var(--secondary-color)",
       },
+      boxShadow: {
+        he: "var(--shadow-elevation-high)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },

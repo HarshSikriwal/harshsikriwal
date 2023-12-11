@@ -30,7 +30,9 @@ const SocialHandles = () => {
         <Twitter />
       </Link>
       <Link href="https://tinyurl.com/harshsikriwalcv" target="_blank">
-        <ImProfile className="text-secondary-color text-xl hover:text-primary-color hover:scale-105 active:scale-95" />
+        <abbr title="My Resume">
+          <ImProfile className="text-secondary-color text-xl hover:text-primary-color hover:scale-105 active:scale-95" />
+        </abbr>
         {/* <Image
           src={ResumeIcon}
           alt="resume-icon"

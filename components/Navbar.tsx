@@ -31,27 +31,14 @@ const Navbar = () => {
 
   return (
     <div
-      className={`flex mb-10 my-2 ${
+      className={`flex mb-10 pt-2 max-lg:p-2 ${
         pathname === "/" ? "justify-end" : "justify-between"
       } `}
     >
       <Link href="./">
         <Header className={`name-nav ${pathname === "/" ? "hidden" : ""}`} />
       </Link>
-      <div className="lg:hidden gap-2 flex">
-        <Link
-          href={"/contact"}
-          className={`w-full ${pathname === "/contact" ? "hidden" : ""}`}
-        >
-          <button
-            className="border-2 px-2 py-1 text-xs font-bold bg-white text-black rounded-xl hover:scale-105 active:scale-95 hover:border-primary-color hover:text-primary-color 
-          "
-          >
-            Get in Touch
-          </button>
-        </Link>
-        <Navigation routes={routes} />
-      </div>
+
       <div className="hidden lg:flex gap-8">
         {routes.map((item) => (
           <Link

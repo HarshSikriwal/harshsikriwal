@@ -5,6 +5,23 @@
 :root {
   --primary-color: #d3d2d2;
   --secondary-color: #929292;
+
+  --shadow-color: green;
+  --shadow-elevation-low: 0px -0.3px 0.3px hsl(var(--shadow-color) / 0.34),
+    0px -0.6px 0.7px -1.2px hsl(var(--shadow-color) / 0.34),
+    0px -1.4px 1.6px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-medium: 0px -0.3px 0.3px hsl(var(--shadow-color) / 0.36),
+    0px -1.1px 1.2px -0.8px hsl(var(--shadow-color) / 0.36),
+    -0.1px -2.8px 3.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    -0.1px -6.8px 7.7px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-high: 0px -0.3px 0.3px hsl(var(--shadow-color) / 0.34),
+    0px -2px 2.3px -0.4px hsl(var(--shadow-color) / 0.34),
+    -0.1px -3.7px 4.2px -0.7px hsl(var(--shadow-color) / 0.34),
+    -0.1px -6.1px 6.9px -1.1px hsl(var(--shadow-color) / 0.34),
+    -0.2px -9.7px 10.9px -1.4px hsl(var(--shadow-color) / 0.34),
+    -0.3px -15.1px 17px -1.8px hsl(var(--shadow-color) / 0.34),
+    -0.4px -23px 25.9px -2.1px hsl(var(--shadow-color) / 0.34),
+    -0.6px -33.9px 38.1px -2.5px hsl(var(--shadow-color) / 0.34);
 }
 * {
   margin: 0px;
@@ -26,6 +43,9 @@
 }
 .name-nav p {
   font-size: 13px;
+}
+.shadow-footer {
+  box-shadow: var(--shadow-elevation-high);
 }
 
 @media screen and (min-width: 768px) {
