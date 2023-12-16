@@ -51,6 +51,22 @@ export const projectDetails = [
     bgColor: "#e3fe76",
   },
   {
+    name: "Pepsi Page ",
+    type: "Front-End/Product Page",
+    duration: "Nov23",
+    tech: "React, Vite, Bootstrap, TypeScript",
+    description:
+      "Recreated a Pepsi product design from Behance into a full functioning web page.",
+    images: [
+      "/projects-images/pepsi-ui/page-one.png",
+      "/projects-images/pepsi-ui/page-two.png",
+      "/projects-images/pepsi-ui/page-three.png",
+    ],
+    websiteLink: "https://pepsi-ui-rosy.vercel.app",
+    gitHubLink: "https://github.com/HarshSikriwal/PepsiUi",
+    bgColor: "#1b549f",
+  },
+  {
     name: "Github Finder",
     type: "API Integration",
     duration: "June23",
@@ -113,22 +129,6 @@ export const projectDetails = [
     websiteLink: "https://grammarly-premium-page.vercel.app",
     gitHubLink: "https://github.com/HarshSikriwal/Grammarly-Premium-Page",
     bgColor: "#11a683",
-  },
-  {
-    name: "Pepsi Page ",
-    type: "Front-End/Product Page",
-    duration: "Nov22",
-    tech: "React, Vite, Bootstrap, TypeScript",
-    description:
-      "Recreated a Pepsi product design from Behance into a full functioning web page.",
-    images: [
-      "/projects-images/pepsi-ui/page-one.png",
-      "/projects-images/pepsi-ui/page-two.png",
-      "/projects-images/pepsi-ui/page-three.png",
-    ],
-    websiteLink: "https://pepsi-ui-rosy.vercel.app",
-    gitHubLink: "https://github.com/HarshSikriwal/PepsiUi",
-    bgColor: "#1b549f",
   },
   {
     name: "Apna Ghar",
